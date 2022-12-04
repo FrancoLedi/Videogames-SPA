@@ -1,0 +1,49 @@
+.container{
+    flex: 1;
+    display: grid;
+    grid-auto-columns: max-content;
+    align-content: center;
+    justify-content: center;
+    grid-auto-flow: column;
+   }
+
+
+.son2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: fit-content;
+    grid-gap: 1.5rem;
+    max-height: 41.5rem;
+    background: transparent;
+    overflow: auto;
+    padding: 0 1rem;
+    scrollbar-width: none;
+    justify-content: center;
+    justify-items: center;
+    align-content: stretch;
+    align-items: center;
+    width: min-content;
+    grid-column: 1/1;
+}
+
+.a:hover {
+    backdrop-filter: blur(10px);
+    background: rgba(105, 26, 196, 0.25);
+}
+/*
+.container{
+width: auto;
+    display: inline-flex;
+    justify-content: space-around;
+    position: relative;
+    flex-direction: row-reverse;
+}
+
+.son2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+    overflow-y: auto;
+}
+*/
