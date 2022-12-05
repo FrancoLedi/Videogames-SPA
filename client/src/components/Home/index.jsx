@@ -7,7 +7,7 @@ import Filters from '../Filters';
 import Paginado from '../Paginado';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
-import s from './Home.module.css'
+import s from '../../index.css';
 
  const Home = (props) => {
 

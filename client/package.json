@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
     "axios": "^0.27.2",
+    "postcss-import": "^15.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
@@ -20,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "postcss-start": "postcss --watch src/index.pcss -o src/index.css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,5 +41,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nesting": "^10.2.0",
+    "postcss-preset-env": "^7.8.3",
+    "stylelint": "^14.16.0",
+    "stylelint-config-standard": "^29.0.0"
   }
 }

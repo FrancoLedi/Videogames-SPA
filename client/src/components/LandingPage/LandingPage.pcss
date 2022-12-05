@@ -1,0 +1,19 @@
+@define-mixin PinkButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 26px;
+    gap: 8px;
+    background-color: var(--background-PinkButton);
+    border: 1px solid var(--border-PinkButton);
+    box-shadow: var(--boxshadow-PinkButton);
+    border-radius: 9px;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-PinkButton);
+    text-shadow: var(--textshadow-PinkButton);
+}
+
+.button{
+    @add-mixin PinkButton;
+}
