@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { filterVideogamesBy, sortVideogamesBy } from "../../redux/Actions";
-
+import '../../index.css';
 
 
 function Filters({paginado, refreshComponent}) {
@@ -23,8 +23,8 @@ function Filters({paginado, refreshComponent}) {
     }
 
     return (
-      <div>
-        <select onChange={e => handleFilterBy(e)}>
+      <>
+        <select className="PinkButton" onChange={e => handleFilterBy(e)}>
             <optgroup label = "Conexion">
                 <option value = 'all'>Todos</option>
                 <option value = 'db'>Creados</option>
@@ -36,7 +36,7 @@ function Filters({paginado, refreshComponent}) {
                 ))}
             </optgroup>
         </select>
-        <select onChange={e => handleSortBy(e)}>
+        <select className="PinkButton" onChange={e => handleSortBy(e)}>
                 
             <optgroup label = "Rating">
                 <option value = 'asc'>Ascendente</option>
@@ -47,7 +47,7 @@ function Filters({paginado, refreshComponent}) {
                 <option value = 'z-a'>Z - A</option>
             </optgroup>
         </select>
-      </div>
+      </>
     );
   }
   

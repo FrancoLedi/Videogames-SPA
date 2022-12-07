@@ -1,0 +1,66 @@
+
+.Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h3{
+        font-family: 'Teko';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.563rem;
+        line-height: 130%;
+        color: var(--secondary-000);
+        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);;
+    }
+
+    & .GenresContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        & .Genre{
+            @add-mixin Genres;
+        }
+    }
+}
+
+
+.Img-Genre{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    
+    & .Rating {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        color: rgba(33, 216, 33, 1);
+        gap: .15rem;
+        
+        font-family: Teko;
+        font-size: 1rem;
+        font-weight: 700;
+
+        & .stars{
+            width: 1.05rem;
+            height: 1.2rem;
+        }
+
+    }
+
+    & .CardImage {
+        box-shadow: var(--boxshadow-Card);
+        outline: var(--border-Card);
+        outline-offset: 0px;
+        border-radius: 10px;
+        width: inherit;
+        height: 14rem;
+    }
+}
+

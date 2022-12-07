@@ -7,7 +7,7 @@ import Filters from '../Filters';
 import Paginado from '../Paginado';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
-import s from '../../index.css';
+import '../../index.css';
 
  const Home = (props) => {
 
@@ -38,27 +38,28 @@ import s from '../../index.css';
     // DESPUES TENGO QUE AGREGAR UN LINK EN CADA <VideogameCard> QUE ME LLEVE AL DETAIL
 
     return (
-        <div class={s.container}>
-            <div class={s.son1}>
-            <Link to= '/videogames/create'>Create new game</Link>
-            <h1>Games:</h1>
-            <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
-            <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
-            <SearchBar></SearchBar>
+        <>
+            <div class='navbar'>
+                <Link to= '/videogames/create'>Create new game</Link>
+                <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
+                <SearchBar></SearchBar>
             </div>
-            <div class={s.son2}>
+            <div class='CardContainer'>
             {currentVideogames.length > 0 ? (currentVideogames.map((game) => {
                 
-                return ( <Link class={s.a} key={game.id} to= {'/videogame/' + game.id}>
+                return ( <Link class='link' key={game.id} to= {'/videogame/' + game.id}>
                     <VideogameCard
                     key={game.id}
                     id={game.id}
                     name={game.name}
                     img={game.img}
-                    genres={game.genres.map( g => g )} /> </Link>)
+                    genres={game.genres.map( g => g )} 
+                    rating={game.rating}
+                    /> </Link>)
             })) : <h1>No hay juegos</h1>}
             </div>
-        </div>
+            <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
+        </>
     );
 };
 

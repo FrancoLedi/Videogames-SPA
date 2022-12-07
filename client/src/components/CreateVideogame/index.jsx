@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import { createVideogame, getGenres } from "../../redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
-import s from './CreateVideogame.module.css'
+import '../../index.css'
 
 const CreateVideogame = () => {
     useEffect( () => {
@@ -94,10 +94,10 @@ const CreateVideogame = () => {
     }
     
     return (
-        <div class={s.container}>
+        <div class=''>
         <Link to= '/home'>Home</Link>
-            <form class={s.form} onSubmit={(e) => handleSubmit(e)}>
-                <div class={s.item}>
+            <form class='' onSubmit={(e) => handleSubmit(e)}>
+                <div class=''>
                     <label>Name</label>
                     <input
                         type = 'text'
@@ -108,7 +108,7 @@ const CreateVideogame = () => {
                     />
                 </div>
 
-                <div class={s.item} id={s.description}>
+                <div class=''>
                     <label>Description</label>
                     <textarea
                         type = 'text'
@@ -119,7 +119,7 @@ const CreateVideogame = () => {
                     />
                 </div>
 
-                <div class={s.item}>
+                <div class=''>
                     <label>Image</label>
                     <input
                         type = 'text'
@@ -129,9 +129,9 @@ const CreateVideogame = () => {
                     />
                 </div>
 
-                <div class={s.item}>
+                <div class=''>
                     <label>Created at</label> {/* Averiguar como te trae el value este input asi lo handeleamos*/}
-                    <input id={s.date}
+                    <input
                         type = "date"
                         value = {input.released}
                         name = 'released'
@@ -139,8 +139,8 @@ const CreateVideogame = () => {
                     />
                 </div>
 
-                <div class={s.item} id={s.aux}>
-                <select id={s.genres} onChange={(e) => handleSelect(e)}>
+                <div class=''>
+                <select id='' onChange={(e) => handleSelect(e)}>
                 <optgroup label = "Géneros">
                 <option selected disabled hidden>Select an option</option>
                 {genres && genres.map(g => (
@@ -150,7 +150,7 @@ const CreateVideogame = () => {
                  </select>
                     <label>Rating</label> 
                     <input
-                        id={s.rating}
+                        id=''
                         type = "number"
                         min = "0" 
                         max = "5" 
@@ -161,11 +161,11 @@ const CreateVideogame = () => {
                     
                 </div>
 
-                <div class={s.item}>
+                <div class=''>
                     <label><strong>Platforms </strong></label> {/* Aca hay que averiguar como trae el value asi vamos a poder 
                                                                                                     controlar como llega el dato a la DB*/}
                      
-                        <div class={s.platforms}>
+                        <div class=''>
                             <div>
                                 <input name='PC' type="checkbox" value="PC" onChange={(e) => handleCheckbox(e)}/>
                                 <label>PC</label>
@@ -203,7 +203,7 @@ const CreateVideogame = () => {
 
                
                 
-                    <button class={s.submit} type='submit'>Create game</button>
+                    <button class='' type='submit'>Create game</button>
                     
                     
             </form>

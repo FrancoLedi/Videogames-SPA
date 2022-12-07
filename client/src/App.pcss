@@ -1,27 +1,36 @@
-#root{
-  min-height: 100vh;
-  min-width: 100vw;
+*::-webkit-scrollbar {
+  width: 0.250rem;
+  height: 0.250rem;
 }
-::-webkit-scrollbar {
-  display: none;
+
+*::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 20px;
 }
 
 :root{
   --background-cover-black: rgba(30, 30, 30, 0.81);
   --background-PinkButton: rgba(210, 20, 104, 1);
-  --border-PinkButton: rgba(248, 185, 213, 0.3);
-  --text-PinkButton: rgba(255, 255, 255, 1);
-  --boxshadow-PinkButton: 4px 5px 5px rgba(0, 0, 0, 0.4);
-  --textshadow-PinkButton: 2px 2px 4px 0px rgba(0, 0, 0, 1);
-}
 
-.App {
-  text-align: center;
-  position: relative;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  padding: 2rem;
+  --border-PinkButton: rgba(248, 185, 213, 0.3);
+  --border-GenresButton: 1px solid rgba(235, 45, 129, 0.5);
+  --border-Card: 1px solid rgba(255, 255, 255, 0.3);
+
+  --text-PinkButton: rgba(255, 255, 255, 1);
+  --textshadow-PinkButton: 2px 2px 4px #000000;
+  --textshadow-GenresButton: 1.25px 1.25px 2.5px rgba(235, 45, 129, 0.5);
+
+  --boxshadow-PinkButton: 4px 5px 5px rgba(0, 0, 0, 0.4);
+  --boxshadow-GenresButton: 0px 0px 15px 3px rgba(210, 20, 104, 0.35);
+  --boxshadow-Card: 5px 5px 5px 2px rgba(0, 0, 0, 0.65);
+ 
+  --secondary-000: rgba(253, 232, 241, 1);
+  --secondary-500: rgba(210, 20, 104, 1);
+  --secondary-800: rgba(23, 2, 12, 1);
 }
 
 *{
@@ -33,19 +42,76 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
 }
-html{
-  height: 100vh;
-  width: 100vw;
-  background: url('./img/Background-Image.jpg') no-repeat center center / cover;
-}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  min-width: 100vw;
-  background: rgba(30, 30, 30, 0.81);
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 
+.App{
+  background-color: rgba(0, 0, 0, 0.60);
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  background: url('./img/Background-Image.jpg') no-repeat center center / cover;
+  mix-blend-mode: overlay;
+}
+
+@define-mixin Genres {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem .5rem;
+  gap: 10px;
+
+  background-color: var(--secondary-800);
+  mix-blend-mode: normal;
+  border: var(--border-GenresButton);
+  box-shadow: var(--boxshadow-GenresButton);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+
+  font-family: Ubuntu;
+  color: var(--secondary-500);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0em;
+  text-shadow: var(--textshadow-GenresButton)
+
+}
+
+@define-mixin PinkButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 26px;
+  gap: 8px;
+  background-color: var(--background-PinkButton);
+  border: 1px solid var(--border-PinkButton);
+  box-shadow: var(--boxshadow-PinkButton);
+  border-radius: 9px;
+  font-family: 'Ubuntu';
+  color: var(--text-PinkButton);
+  text-shadow: var(--textshadow-PinkButton);
+  font-style: sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 175%;
+}
+
+.PinkButton{
+  @add-mixin PinkButton;
+}

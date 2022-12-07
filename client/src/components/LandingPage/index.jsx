@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../index.css'
+import '../../index.css';
 
 export default function LandingPage(){
     return (
-        <div className='backgroundImage'>
+        <>
         <div className='letter'>
             <h1>¡Welcome gamers!</h1>
             <Link to = '/home'>
@@ -13,7 +13,7 @@ export default function LandingPage(){
                 </button>
             </Link>
         </div>
-        </div>
+        </>
     )
 }
 

@@ -18,10 +18,10 @@ export default function SearchBar() {
   }
 
   return (
-  <div>
+  <>
     <div>
       <input onChange={(e) => handleInputChange(e)} type="text" placeholder='Buscar un juego' value={name}/>
-      <button type='submit' onClick={(e) => HandleSubmit(e)}>Buscar</button>
+      <button className="PinkButton" type='submit' onClick={(e) => HandleSubmit(e)}>Buscar</button>
     </div>
-  </div> )
+  </> )
 };
