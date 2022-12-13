@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 5rem;
+    padding: 0.64rem 4.8rem;
     gap: 3.1rem;
 }
 
@@ -25,9 +25,82 @@
 }
 
 
-.link{
-    width: 100%;
+.link1{
+    display: flex;
+    gap: .5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+
+.CreateGame{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-800);
+    border: 1px solid var(--border-PinkButton);
+    border-radius: .95rem;
+    padding: 0.2rem 0.8rem;
+    box-shadow: var(--boxshadow-PinkButton);
+}
+
+
+.span{
+    font-family: Teko;
+    font-size: var(--fontsize-2);
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0em;
+    text-align: center;
+    text-shadow: var(--textshadow-AddButton);
+    color: var(--secondary-400);
+}
+
+
+.AddIcon{
+    background-color: var(--secondary-900);
+    border-radius: 20px;
+    width: var(--fontsize-5);
+    height: var(--fontsize-5);
+}
+
+
+.SearchContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.SearchContainer > .input{
+        background: #393A40;
+        border: 1px solid rgba(192, 155, 172, 0.3);
+        border-radius: 9px;
+        color: rgba(199, 185, 184, 1);
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 175%;
+        text-align: start;
+        padding: .2rem .8rem;
+    }
+
+
+.SearchContainer > .PinkButton{
+        position: absolute;
+        width: 5rem;
+        height: 3.7rem;
+    }
+
+
+.SearchContainer > .PinkButton .Lupa{
+           width: 2.200rem;
+           height: 2rem;
+       }
 
 
 .Card{
@@ -42,9 +115,9 @@
         font-style: normal;
         font-weight: 700;
         font-size: 1.563rem;
-        line-height: 130%;
+        line-height: 2.5rem;
         color: var(--secondary-000);
-        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);;
+        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
     }
 
 
@@ -64,7 +137,7 @@
             align-items: center;
             padding: 0rem .5rem;
             gap: 10px;
-            background-color: var(--secondary-800);
+            background-color: var(--secondary-700);
             mix-blend-mode: normal;
             border: var(--border-GenresButton);
             box-shadow: var(--boxshadow-GenresButton);
@@ -88,6 +161,7 @@
     align-items: center;
     gap: 8px;
     width: 100%;
+    
 }
 
 
@@ -98,11 +172,10 @@
         align-items: flex-start;
         color: rgba(33, 216, 33, 1);
         gap: .15rem;
-        
+
         font-family: Teko;
         font-size: 1rem;
         font-weight: 700;
-
     }
 
 
@@ -120,6 +193,64 @@
         width: inherit;
         height: 14rem;
     }
+
+
+.Img-Genre > .CardLink {
+        width: 100%;
+        position: relative;
+    }
+
+
+.Blur {
+    display: flex;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    height: 75%;
+    width: inherit;
+    background: radial-gradient(100% 100% at 50% 100%, rgba(163, 15, 81, 0.5) 15.12%, rgba(235, 45, 129, 0.425) 54.15%, rgba(244, 139, 185, 0.125) 100%);
+
+    -webkit-backdrop-filter: blur(7.5px);
+
+            backdrop-filter: blur(7.5px);
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: var(--fontsize-4);
+    line-height: 175%;
+    color: rgba(29, 30, 34, 0.75);
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 600px 225px;
+    border-top-right-radius: 600px 225px;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+}
+
+
+/* Con esto estaba la ultima vez que entre (redondear bien las cards para que queden lo mas parecido posible al maquetado)
+  //border-top-left-radius: 225px 225px;
+  //border-top-right-radius: 225px 225px;
+    */
+
+
+/* & .CardImage {
+        box-shadow: var(--boxshadow-Card);
+        outline: var(--border-Card);
+        outline-offset: 0px;
+        border-radius: 10px;
+        width: inherit;
+        height: 14rem;
+    }
+
+    & > .CardLink {
+        width: 100%;
+        background: radial-gradient(75.61% 75.61% at 50% 100%, rgba(210, 20, 104, 0.75) 0%, rgba(235, 45, 129, 0.35) 40%, rgba(255, 255, 255, 0) 100%);
+        backdrop-filter: blur(7.5px);
+        border-radius: 10px;
+    }*/
 
 
 *::-webkit-scrollbar {
@@ -150,14 +281,27 @@
   --text-PinkButton: rgba(255, 255, 255, 1);
   --textshadow-PinkButton: 2px 2px 4px #000000;
   --textshadow-GenresButton: 1.25px 1.25px 2.5px rgba(235, 45, 129, 0.5);
+  --textshadow-AddButton: 5px 5px 2px rgba(0, 0, 0, 0.4);
+
 
   --boxshadow-PinkButton: 4px 5px 5px rgba(0, 0, 0, 0.4);
   --boxshadow-GenresButton: 0px 0px 15px 3px rgba(210, 20, 104, 0.35);
   --boxshadow-Card: 5px 5px 5px 2px rgba(0, 0, 0, 0.65);
  
   --secondary-000: rgba(253, 232, 241, 1);
+  --secondary-400: rgba(235, 45, 129, 1);
   --secondary-500: rgba(210, 20, 104, 1);
-  --secondary-800: rgba(23, 2, 12, 1);
+  --secondary-700: rgba(23, 2, 12, 1);
+  --secondary-800: rgba(70, 7, 35, 1);
+  --secondary-900: rgba(23, 2, 12, 1);
+
+
+  --fontsize-1: 1rem;
+  --fontsize-2: 1.25rem;
+  --fontsize-3: 1.563rem;
+  --fontsize-4: 1.953rem;
+  --fontsize-5: 2.441rem;
+  --fontsize-6: 3.052rem;
 }
 
 

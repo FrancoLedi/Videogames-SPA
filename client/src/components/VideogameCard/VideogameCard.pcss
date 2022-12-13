@@ -8,9 +8,9 @@
         font-style: normal;
         font-weight: 700;
         font-size: 1.563rem;
-        line-height: 130%;
+        line-height: 2.5rem;
         color: var(--secondary-000);
-        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);;
+        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
     }
 
     & .GenresContainer{
@@ -42,7 +42,7 @@
         align-items: flex-start;
         color: rgba(33, 216, 33, 1);
         gap: .15rem;
-        
+
         font-family: Teko;
         font-size: 1rem;
         font-weight: 700;
@@ -51,7 +51,6 @@
             width: 1.05rem;
             height: 1.2rem;
         }
-
     }
 
     & .CardImage {
@@ -62,5 +61,57 @@
         width: inherit;
         height: 14rem;
     }
+
+    & > .CardLink {
+        width: 100%;
+        position: relative;
+    }
+    
 }
 
+.Blur {
+    display: flex;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    height: 75%;
+    width: inherit;
+    background: radial-gradient(100% 100% at 50% 100%, rgba(163, 15, 81, 0.5) 15.12%, rgba(235, 45, 129, 0.425) 54.15%, rgba(244, 139, 185, 0.125) 100%);
+
+    backdrop-filter: blur(7.5px);
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: var(--fontsize-4);
+    line-height: 175%;
+    color: rgba(29, 30, 34, 0.75);
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 600px 225px;
+    border-top-right-radius: 600px 225px;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+}
+
+
+  /* Con esto estaba la ultima vez que entre (redondear bien las cards para que queden lo mas parecido posible al maquetado)
+  //border-top-left-radius: 225px 225px;
+  //border-top-right-radius: 225px 225px;
+    */
+/* & .CardImage {
+        box-shadow: var(--boxshadow-Card);
+        outline: var(--border-Card);
+        outline-offset: 0px;
+        border-radius: 10px;
+        width: inherit;
+        height: 14rem;
+    }
+
+    & > .CardLink {
+        width: 100%;
+        background: radial-gradient(75.61% 75.61% at 50% 100%, rgba(210, 20, 104, 0.75) 0%, rgba(235, 45, 129, 0.35) 40%, rgba(255, 255, 255, 0) 100%);
+        backdrop-filter: blur(7.5px);
+        border-radius: 10px;
+    }*/

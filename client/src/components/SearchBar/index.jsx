@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { getGame } from '../../redux/Actions';
+import Lupa from '../../img/Lupa.png';
 
 export default function SearchBar() {
     let dispatch = useDispatch();
@@ -18,10 +19,9 @@ export default function SearchBar() {
   }
 
   return (
-  <>
-    <div>
-      <input onChange={(e) => handleInputChange(e)} type="text" placeholder='Buscar un juego' value={name}/>
-      <button className="PinkButton" type='submit' onClick={(e) => HandleSubmit(e)}>Buscar</button>
+    <div className='SearchContainer'>
+      <input className='input' onChange={(e) => handleInputChange(e)} type="text" placeholder='Search a game...' value={name}/>
+      <button className="PinkButton" type='submit' onClick={(e) => HandleSubmit(e)}><img className='Lupa' src={Lupa} /></button>
     </div>
-  </> )
+ )
 };

@@ -7,6 +7,7 @@ import Filters from '../Filters';
 import Paginado from '../Paginado';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
+import AddIcon from '../../img/Add.png';
 import '../../index.css';
 
  const Home = (props) => {
@@ -35,19 +36,20 @@ import '../../index.css';
     }, []);
 
     
-    // DESPUES TENGO QUE AGREGAR UN LINK EN CADA <VideogameCard> QUE ME LLEVE AL DETAIL
 
     return (
         <>
             <div class='navbar'>
-                <Link to= '/videogames/create'>Create new game</Link>
+                <div class='CreateGame'>
+                    <Link class='link1' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
+                </div>
                 <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
                 <SearchBar></SearchBar>
             </div>
             <div class='CardContainer'>
             {currentVideogames.length > 0 ? (currentVideogames.map((game) => {
                 
-                return ( <Link class='link' key={game.id} to= {'/videogame/' + game.id}>
+                return ( 
                     <VideogameCard
                     key={game.id}
                     id={game.id}
@@ -55,7 +57,7 @@ import '../../index.css';
                     img={game.img}
                     genres={game.genres.map( g => g )} 
                     rating={game.rating}
-                    /> </Link>)
+                    /> )
             })) : <h1>No hay juegos</h1>}
             </div>
             <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
