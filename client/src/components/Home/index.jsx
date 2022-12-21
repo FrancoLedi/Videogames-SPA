@@ -41,7 +41,7 @@ import '../../index.css';
         <>
             <div class='navbar'>
                 <div class='CreateGame'>
-                    <Link class='link1' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
+                    <Link class='Addlink' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
                 </div>
                 <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
                 <SearchBar></SearchBar>

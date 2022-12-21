@@ -39,6 +39,7 @@ function rootReducer(state = initialState, action){
             return { ...state, videogames: filtered };
 
         case SORT:
+            console.log(action.payload);
             var sortedVideogames = [];  
             
             switch (action.payload) {

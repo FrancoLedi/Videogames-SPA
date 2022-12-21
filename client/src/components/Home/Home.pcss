@@ -1,30 +1,32 @@
 .navbar{
     background: #1D1E22;
     border-bottom: 1px solid rgba(170, 125, 145, 0.5);
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 0.64rem 4.8rem;
-    gap: 3.1rem;
+    padding: 0.64rem;
+   
 }
 
 
 .CardContainer{
     display: grid;
-    height: 89%;
+    height: 90%;  /*Esto hay que arreglarlo*/
     padding: 3rem;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 6rem;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: row;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-row-gap: 5.5rem;
     grid-column-gap: 3rem;
     overflow-y: scroll;
     overflow-x: hidden;
-    justify-content: center;
+    justify-self: center;
 }
 
-.link1{
+.Addlink{
     display: flex;
     gap: .5rem;
     flex-direction: row;
@@ -60,4 +62,21 @@
     border-radius: 20px;
     width: var(--fontsize-5);
     height: var(--fontsize-5);
+    
+    &:hover{
+        background-color: var(--secondary-200);
+    }
 }
+
+/*.CardContainer{
+    display: grid;
+    height: 90%; 
+    padding: 3rem;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 5.5rem;
+    grid-column-gap: 3rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-self: center;
+}*/

@@ -1,16 +1,19 @@
 
 .Card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   width: 100%;
     & h3{
+        display: inline-flex;
+        width: 100%;
         font-family: 'Teko';
         font-style: normal;
         font-weight: 700;
         font-size: 1.563rem;
         line-height: 2.5rem;
         color: var(--secondary-000);
-        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
+        text-shadow: var(--textshadow-AddButton);
+        overflow: hidden;
+        height: 2.5rem;
+        justify-content: center;
     }
 
     & .GenresContainer{
@@ -19,6 +22,8 @@
         justify-content: center;
         align-items: center;
         gap: 8px;
+        width: 100%;
+        flex-wrap: wrap;
 
         & .Genre{
             @add-mixin Genres;
@@ -32,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 0.328rem;
     width: 100%;
     
     & .Rating {
@@ -54,12 +59,13 @@
     }
 
     & .CardImage {
+        
         box-shadow: var(--boxshadow-Card);
         outline: var(--border-Card);
         outline-offset: 0px;
         border-radius: 10px;
         width: inherit;
-        height: 14rem;
+        height: 13rem;
     }
 
     & > .CardLink {
@@ -69,6 +75,12 @@
     
 }
 
+@media (width > 1440px) {
+    .Img-Genre  .CardImage{
+        height: 19rem;
+    }
+}
+
 .Blur {
     display: flex;
     bottom: 4px;
@@ -76,42 +88,19 @@
     right: 0;
     margin: auto;
     position: absolute;
-    height: 75%;
+    height: 13rem;
     width: inherit;
     background: radial-gradient(100% 100% at 50% 100%, rgba(163, 15, 81, 0.5) 15.12%, rgba(235, 45, 129, 0.425) 54.15%, rgba(244, 139, 185, 0.125) 100%);
-
-    backdrop-filter: blur(7.5px);
+    text-shadow: 3px 3px 1.5px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
     font-family: 'Ubuntu', sans-serif;
     font-style: italic;
     font-weight: 700;
     font-size: var(--fontsize-4);
     line-height: 175%;
-    color: rgba(29, 30, 34, 0.75);
+    color: rgb(29, 30, 34);
     align-items: center;
     justify-content: center;
-    border-top-left-radius: 600px 225px;
-    border-top-right-radius: 600px 225px;
-    border-bottom-left-radius: 19px;
-    border-bottom-right-radius: 19px;
+    border-radius: 10px;
 }
 
-
-  /* Con esto estaba la ultima vez que entre (redondear bien las cards para que queden lo mas parecido posible al maquetado)
-  //border-top-left-radius: 225px 225px;
-  //border-top-right-radius: 225px 225px;
-    */
-/* & .CardImage {
-        box-shadow: var(--boxshadow-Card);
-        outline: var(--border-Card);
-        outline-offset: 0px;
-        border-radius: 10px;
-        width: inherit;
-        height: 14rem;
-    }
-
-    & > .CardLink {
-        width: 100%;
-        background: radial-gradient(75.61% 75.61% at 50% 100%, rgba(210, 20, 104, 0.75) 0%, rgba(235, 45, 129, 0.35) 40%, rgba(255, 255, 255, 0) 100%);
-        backdrop-filter: blur(7.5px);
-        border-radius: 10px;
-    }*/
