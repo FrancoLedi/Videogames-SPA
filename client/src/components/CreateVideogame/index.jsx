@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import { createVideogame, getGenres } from "../../redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
+import Home from '../../img/Home.png';
+import Gameboy from '../../img/Gameboy.png';
 import '../../index.css'
 
 const CreateVideogame = () => {
@@ -22,6 +24,7 @@ const CreateVideogame = () => {
         genres: []
     })
 
+
     function handleChange(e) {
         setInput({
             ...input,
@@ -29,38 +32,44 @@ const CreateVideogame = () => {
         })
     }
 
-    function handleCheckbox(e) {
-        if (e.target.checked){
+    function handleGenres(value) {
+
+        if (!input.genres.find( p => p === value )){
+
             setInput({
                 ...input,
-                platforms: input.platforms.concat(e.target.value)
+                genres: input.genres.concat(value)
             })
+            
         }
         else{
+            
             setInput({
                 ...input,
-                platforms: input.platforms.filter(el => el !== e.target.value)
+                genres: input.genres.filter(el => el !== value)
             })
-        }
         
-    }
-
-    function handleSelect(e) {
-        e.preventDefault()
-        if (!input.genres.find(g => g === e.target.value)){
-            setInput({
-                ...input,
-                genres: input.genres.concat(e.target.value)
-            })
         }
     }
 
-    function handleDelete(e) {
+    function handlePlatforms(value) {
         
-        setInput({
-            ...input,
-            genres: input.genres.filter( p => p !== e.target.value)
-        })
+        if (!input.platforms.find( p => p === value )){
+
+            setInput({
+                ...input,
+                platforms: input.platforms.concat(value)
+            })
+            
+        }
+        else{
+            
+            setInput({
+                ...input,
+                platforms: input.platforms.filter(el => el !== value)
+            })
+        
+        }
     }
 
     const validate = (input) => {
@@ -94,133 +103,120 @@ const CreateVideogame = () => {
     }
     
     return (
-        <div class=''>
-        <Link to= '/home'>Home</Link>
-            <form class='' onSubmit={(e) => handleSubmit(e)}>
-                <div class=''>
-                    <label>Name</label>
-                    <input
-                        type = 'text'
-                        value = {input.name}
-                        name = 'name'
-                        onChange={(e) => handleChange(e)}
+        <div class='BackgroundImage'>
+            <div class='BackgroundBlur'>
+                    <form class='Form' onSubmit={(e) => handleSubmit(e)}>
+                            <div class='aux'>
+
+                                <div class='HomeContainer'>
+                                    <Link class='HomeButton' to= '/home'><img className="HomeIcon" src={Home} /></Link>
+                                </div>
+
+                                <div>
+                                    <h1 class='AddTitle'>¡Add new game!</h1>
+                                </div>
                         
-                    />
-                </div>
 
-                <div class=''>
-                    <label>Description</label>
-                    <textarea
-                        type = 'text'
-                        value = {input.description}
-                        name = 'description'
-                        onChange={(e) => handleChange(e)}
+                            <div class='InputContainer'>
+                                <label>*Name</label>
+                                <input
+                                    type = 'text'
+                                    value = {input.name}
+                                    name = 'name'
+                                    onChange={(e) => handleChange(e)}
+                                    
+                                />
+                            </div>
+
+                            <div class='InputContainer'>
+                                <label>Description</label>
+                                <textarea
+                                    type = 'text'
+                                    value = {input.description}
+                                    name = 'description'
+                                    onChange={(e) => handleChange(e)}
+                                    
+                                />
+                            </div>
+
+                            <div class='InputContainer'>
+                                <label>Image</label>
+                                <input
+                                    type = 'text'
+                                    value = {input.img}
+                                    name = 'img'
+                                    onChange={(e) => handleChange(e)}
+                                />
+                            </div>
+
+                            <div class='InputContainer'>
+                                <label>Released</label> 
+                                <input
+                                    type = "date"
+                                    value = {input.released}
+                                    name = 'released'
+                                    onChange={(e) => handleChange(e)}
+                                />
+                            </div>
+
+                            
+                            
+                            <div class='InputContainer'>
+                                <label>Rating</label> 
+                                <input
+                                    id=''
+                                    type = "number"
+                                    min = "0" 
+                                    max = "5" 
+                                    value = {input.rating} 
+                                    name = 'rating'
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                </div>
+                            
+
+                            <div class='PlatformsGenres'>
+                                <label>
+                                    <strong>Platforms:</strong>
+                                </label> 
+                                
+                                    <div class='CheckboxContainer'>
+                                        <div onClick={(e) => handlePlatforms('PC')} class={input.platforms.find(p => p === 'PC') ? 'ActiveCheckbox' : 'Checkbox'}>PC</div>
+                                        <div onClick={(e) => handlePlatforms('iOS')} class={input.platforms.find(p => p === 'iOS') ? 'ActiveCheckbox' : 'Checkbox'}>iOS</div>
+                                        <div onClick={(e) => handlePlatforms('Android')} class={input.platforms.find(p => p === 'Android') ? 'ActiveCheckbox' : 'Checkbox'}>Android</div>
+                                        <div onClick={(e) => handlePlatforms('macOS')} class={input.platforms.find(p => p === 'macOS') ? 'ActiveCheckbox' : 'Checkbox'}>macOS</div>
+                                        <div onClick={(e) => handlePlatforms('Playstation 4')} class={input.platforms.find(p => p === 'Playstation 4') ? 'ActiveCheckbox' : 'Checkbox'}>Playstation 4</div>
+                                        <div onClick={(e) => handlePlatforms('Playstation 5')} class={input.platforms.find(p => p === 'Playstation 5') ? 'ActiveCheckbox' : 'Checkbox'}>Playstation 5</div>
+                                        <div onClick={(e) => handlePlatforms('XBOX')} class={input.platforms.find(p => p === 'XBOX') ? 'ActiveCheckbox' : 'Checkbox'}>XBOX</div>
+                                        <div onClick={(e) => handlePlatforms('PS Vita')} class={input.platforms.find(p => p === 'PS Vita') ? 'ActiveCheckbox' : 'Checkbox'}>PS Vita</div>
+                                    </div>
+                            </div>
+
+                            <div class='PlatformsGenres'>
+                                <label>
+                                    <strong>Genres:</strong>
+                                </label> 
+                                
+                                    <div class='CheckboxContainer'>
+                                    {genres.map(el => (
+                                        <div onClick={(e) => handleGenres(`${el.name}`)} class={input.genres.find(p => p === `${el.name}`) ? 'ActiveCheckbox' : 'Checkbox'}>{el.name}</div>)
+                                    )}
+                            
+                                    </div>
+                            </div>
+
                         
-                    />
-                </div>
-
-                <div class=''>
-                    <label>Image</label>
-                    <input
-                        type = 'text'
-                        value = {input.img}
-                        name = 'img'
-                        onChange={(e) => handleChange(e)}
-                    />
-                </div>
-
-                <div class=''>
-                    <label>Created at</label> {/* Averiguar como te trae el value este input asi lo handeleamos*/}
-                    <input
-                        type = "date"
-                        value = {input.released}
-                        name = 'released'
-                        onChange={(e) => handleChange(e)}
-                    />
-                </div>
-
-                <div class=''>
-                <select id='' onChange={(e) => handleSelect(e)}>
-                <optgroup label = "Géneros">
-                <option selected disabled hidden>Select an option</option>
-                {genres && genres.map(g => (
-                    <option key={g.id} value={g.name}>{g.name}</option>
-                ))}
-                 </optgroup>
-                 </select>
-                    <label>Rating</label> 
-                    <input
-                        id=''
-                        type = "number"
-                        min = "0" 
-                        max = "5" 
-                        value = {input.rating} 
-                        name = 'rating'
-                        onChange={(e) => handleChange(e)}
-                    />
-                    
-                </div>
-
-                <div class=''>
-                    <label><strong>Platforms </strong></label> {/* Aca hay que averiguar como trae el value asi vamos a poder 
-                                                                                                    controlar como llega el dato a la DB*/}
-                     
-                        <div class=''>
-                            <div>
-                                <input name='PC' type="checkbox" value="PC" onChange={(e) => handleCheckbox(e)}/>
-                                <label>PC</label>
+                                <div class='aux2'>
+                                    <button class='PinkButton AddButton' type='submit'><img className="SelectIcon" src={Gameboy} />Add</button>
+                                </div>
                             </div>
-                            <div>
-                                <input name='iOS' type="checkbox" value="iOS" onChange={(e) => handleCheckbox(e)}/>
-                                <label>iOS</label>
-                            </div>
-                            <div>
-                                <input name='Android' type="checkbox" value="Android" onChange={(e) => handleCheckbox(e)}/>
-                                <label>Android</label>
-                            </div>
-                            <div>
-                                <input name='macOS' type="checkbox" value="macOS" onChange={(e) => handleCheckbox(e)}/>
-                                <label>macOS</label>
-                            </div>
-                            <div>
-                                <input name='PlayStation 4' type="checkbox" value="PlayStation 4" onChange={(e) => handleCheckbox(e)}/>
-                                <label>PlayStation 4</label>
-                            </div>
-                            <div>
-                                <input name='PlayStation 5' type="checkbox" value="PlayStation 5" onChange={(e) => handleCheckbox(e)}/>
-                                <label>PlayStation 5</label>
-                            </div>
-                            <div>
-                                <input name='XBOX' type="checkbox" value="XBOX" onChange={(e) => handleCheckbox(e)}/>
-                                <label>XBOX</label>
-                            </div>
-                            <div>
-                                <input name='PS Vita' type="checkbox" value="PS Vita" onChange={(e) => handleCheckbox(e)}/>
-                                <label>PS Vita</label>
-                            </div>
-                        </div>
-                </div>
-
-               
-                
-                    <button class='' type='submit'>Create game</button>
-                    
-                    
-            </form>
+                            
+                    </form>
             
-            
+                </div>
                     
         </div>
     )
 }
 
 export default CreateVideogame;
-
-/* 
-    
-    {input.genres.map(el =>
-                    
-                    <button class={s.genresBut} key={el} value={el} onClick={(e) => handleDelete(e)}>{el}</button>
-                    
-                    )}
-*/

@@ -1,0 +1,181 @@
+.BackgroundImage{
+    background: radial-gradient(114.73% 166.93% at 66.26% 109.02%, #482264 43.11%, rgba(115, 18, 243, 0.4) 72.92%, rgba(41, 21, 55, 0.3) 91.67%, rgba(1, 0, 2, 0.5) 100%),url('./img/AddGame.jpg') no-repeat center center / cover;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.35) inset;
+    width: 100%;
+    height: 100%;
+}
+
+.BackgroundBlur{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(10, 7, 7, 0.05);
+}
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(23, 2, 12, 0.8);
+    border: var(--border-Card);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    border-radius: 16px 2.5px 2.5px 16px;
+    gap: var(--fontsize-1);
+    width: 66%;
+    margin: var(--fontsize-4);
+
+    & > .aux {
+        height: 100%;
+
+        & > .InputContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 700;
+            font-size: var(--fontsize-3);
+            line-height: 175%;
+            color: var(--secondary-300);
+            gap: var(--fontsize-1);
+            width: 85%;
+            margin: 8px auto;
+        }
+    } 
+    
+    }
+
+    .HomeContainer {
+        display: flex;
+        width: 100%;
+
+         & > .HomeButton{
+            display: flex;
+            position: relative;
+            top: var(--fontsize-2);
+            left: var(--fontsize-2);
+            background: var(--secondary-800);
+            width: var(--fontsize-4);
+            height: var(--fontsize-4);
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: var(--fontsize-2);
+            border-radius: 15px;
+            border: 1px solid rgba(248, 185, 213, 0.3);
+            box-shadow: var(--boxshadow-PinkButton);
+
+             & > .HomeIcon{
+                width: var(--fontsize-3);
+                height: var(--fontsize-3);
+            }
+        }
+
+         & > .HomeButton:hover{
+            background: var(--secondary-400);
+            box-shadow: 0px 0px 10px 1px #EB2D81;
+        }
+    }
+
+
+.InputContainer > input, .InputContainer > textarea {
+    background-color: var(--secondary-800);
+    border: 1px solid rgba(248, 185, 213, 0.25);
+    border-radius: 9px;
+    width: 100%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--fontsize-2);
+    line-height: 175%;
+    color: var(--secondary-300);
+}
+
+.AddTitle {
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--fontsize-5);
+    line-height: 130%;
+    color: var(--secondary-500);
+    text-shadow: var(--textshadow-PinkButton);
+}
+
+.PlatformsGenres {
+    display: flex;
+    gap: var(--fontsize-1);
+    flex-direction: column;
+    margin: 8px auto;
+    & > label {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: var(--fontsize-3);
+        line-height: 175%;
+        color: var(--secondary-300);
+    }
+}
+
+.CheckboxContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Checkbox{
+    padding: 0 8px;
+    background: var(--secondary-700);
+    border: var(--border-GenresButton);
+    box-shadow: var(--boxshadow-InputButtons);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fontsize-1);
+    line-height: 175%;
+    text-align: center;
+    color: var(--secondary-500);
+    cursor: pointer;
+   
+}
+
+.AddButton {
+    margin: auto var(--fontsize-2) var(--fontsize-2) auto;
+    gap: 8px;
+}
+
+.aux2 {
+    display: flex;
+    justify-content: end;
+}
+
+.ActiveCheckbox {
+    padding: 0 8px;
+    background: var(--secondary-400);
+    color: var(--secondary-100);
+    border: var(--border-GenresButton);
+    box-shadow: 0px 0px 10px 1px #EB2D81;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fontsize-1);
+    line-height: 175%;
+    text-align: center;
+    cursor: pointer;
+    
+}

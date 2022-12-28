@@ -88,6 +88,209 @@
 }*/
 
 
+.BackgroundImage{
+    background: radial-gradient(114.73% 166.93% at 66.26% 109.02%, #482264 43.11%, rgba(115, 18, 243, 0.4) 72.92%, rgba(41, 21, 55, 0.3) 91.67%, rgba(1, 0, 2, 0.5) 100%),url('./img/AddGame.jpg') no-repeat center center / cover;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.35) inset;
+    width: 100%;
+    height: 100%;
+}
+
+
+.BackgroundBlur{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    background: rgba(10, 7, 7, 0.05);
+}
+
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(23, 2, 12, 0.8);
+    border: var(--border-Card);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    border-radius: 16px 2.5px 2.5px 16px;
+    gap: var(--fontsize-1);
+    width: 66%;
+    margin: var(--fontsize-4); 
+    
+    }
+
+
+.Form > .aux {
+        height: 100%;
+    }
+
+
+.Form > .aux > .InputContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 700;
+            font-size: var(--fontsize-3);
+            line-height: 175%;
+            color: var(--secondary-300);
+            gap: var(--fontsize-1);
+            width: 85%;
+            margin: 8px auto;
+        }
+
+
+.HomeContainer {
+        display: flex;
+        width: 100%;
+    }
+
+
+.HomeContainer > .HomeButton{
+            display: flex;
+            position: relative;
+            top: var(--fontsize-2);
+            left: var(--fontsize-2);
+            background: var(--secondary-800);
+            width: var(--fontsize-4);
+            height: var(--fontsize-4);
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: var(--fontsize-2);
+            border-radius: 15px;
+            border: 1px solid rgba(248, 185, 213, 0.3);
+            box-shadow: var(--boxshadow-PinkButton);
+        }
+
+
+.HomeContainer > .HomeButton > .HomeIcon{
+                width: var(--fontsize-3);
+                height: var(--fontsize-3);
+            }
+
+
+.HomeContainer > .HomeButton:hover{
+            background: var(--secondary-400);
+            box-shadow: 0px 0px 10px 1px #EB2D81;
+        }
+
+
+.InputContainer > input, .InputContainer > textarea {
+    background-color: var(--secondary-800);
+    border: 1px solid rgba(248, 185, 213, 0.25);
+    border-radius: 9px;
+    width: 100%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--fontsize-2);
+    line-height: 175%;
+    color: var(--secondary-300);
+}
+
+
+.AddTitle {
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--fontsize-5);
+    line-height: 130%;
+    color: var(--secondary-500);
+    text-shadow: var(--textshadow-PinkButton);
+}
+
+
+.PlatformsGenres {
+    display: flex;
+    gap: var(--fontsize-1);
+    flex-direction: column;
+    margin: 8px auto;
+}
+
+
+.PlatformsGenres > label {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: var(--fontsize-3);
+        line-height: 175%;
+        color: var(--secondary-300);
+    }
+
+
+.CheckboxContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.Checkbox{
+    padding: 0 8px;
+    background: var(--secondary-700);
+    border: var(--border-GenresButton);
+    box-shadow: var(--boxshadow-InputButtons);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    border-radius: 10px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fontsize-1);
+    line-height: 175%;
+    text-align: center;
+    color: var(--secondary-500);
+    cursor: pointer;
+   
+}
+
+
+.AddButton {
+    margin: auto var(--fontsize-2) var(--fontsize-2) auto;
+    gap: 8px;
+}
+
+
+.aux2 {
+    display: flex;
+    justify-content: end;
+}
+
+
+.ActiveCheckbox {
+    padding: 0 8px;
+    background: var(--secondary-400);
+    color: var(--secondary-100);
+    border: var(--border-GenresButton);
+    box-shadow: 0px 0px 10px 1px #EB2D81;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    border-radius: 10px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fontsize-1);
+    line-height: 175%;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+
 .SearchContainer{
     display: flex;
     flex-direction: row;
@@ -112,6 +315,8 @@
         text-align: start;
         padding: .2rem .8rem;
         width: 15.5rem;
+        border-color: var(--secondary-000);
+        border-right: none;
     }
 
 
@@ -130,6 +335,8 @@
 
 .Card{
    width: 100%;
+
+    
 }
 
 
@@ -149,39 +356,39 @@
     }
 
 
-.Card .GenresContainer{
+.GenresContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.GenresContainer .Genre{
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 8px;
-        width: 100%;
-        flex-wrap: wrap;
+        padding: 0rem .5rem;
+        gap: 10px;
+        background-color: var(--secondary-700);
+        mix-blend-mode: normal;
+        border: var(--border-GenresButton);
+        box-shadow: var(--boxshadow-GenresButton);
+        -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+        border-radius: 10px;
+        font-family: Ubuntu;
+        color: var(--secondary-500);
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: 0em;
+        text-shadow: var(--textshadow-GenresButton);
     }
-
-
-.Card .GenresContainer .Genre{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0rem .5rem;
-            gap: 10px;
-            background-color: var(--secondary-700);
-            mix-blend-mode: normal;
-            border: var(--border-GenresButton);
-            box-shadow: var(--boxshadow-GenresButton);
-            -webkit-backdrop-filter: blur(5px);
-                    backdrop-filter: blur(5px);
-            border-radius: 10px;
-            font-family: Ubuntu;
-            color: var(--secondary-500);
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 2rem;
-            letter-spacing: 0em;
-            text-shadow: var(--textshadow-GenresButton);
-        }
 
 
 .Img-Genre{
@@ -193,26 +400,6 @@
     width: 100%;
     
 }
-
-
-.Img-Genre .Rating {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        color: rgba(33, 216, 33, 1);
-        gap: .15rem;
-
-        font-family: Teko;
-        font-size: 1rem;
-        font-weight: 700;
-    }
-
-
-.Img-Genre .Rating .stars{
-            width: 1.05rem;
-            height: 1.2rem;
-        }
 
 
 .Img-Genre .CardImage {
@@ -248,7 +435,7 @@
     position: absolute;
     height: 13rem;
     width: inherit;
-    background: radial-gradient(100% 100% at 50% 100%, rgba(163, 15, 81, 0.5) 15.12%, rgba(235, 45, 129, 0.425) 54.15%, rgba(244, 139, 185, 0.125) 100%);
+    background: radial-gradient(100% 100% at 50% 100%, rgb(25 15 163 / 75%) 7.12%, rgb(223 45 235 / 50%) 75.15%);
     text-shadow: 3px 3px 1.5px rgba(0, 0, 0, 0.4);
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
@@ -261,6 +448,195 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+}
+
+
+.Rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgba(33, 216, 33, 1);
+    gap: .15rem;
+
+    font-family: Teko;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.Rating > .stars{
+        width: 1.05rem;
+        height: 1.2rem;
+    }
+
+
+.VideogameDetail{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(64 8 33 / 45%), rgb(210 20 104 / 45%));
+}
+
+
+.BackgroundDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    z-index: 100;
+    opacity: .9;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    
+}
+
+
+.BackgroundDetail > img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+.BackgroundDetail::after{
+        content: '';
+        background: radial-gradient(74.48% 176.72% at 24.06% 58.61%, rgba(1, 0, 2, 0.5) 0%, #482264 24.11%, rgba(115, 18, 243, 0.4) 34.74%, rgba(41, 21, 55, 0.3) 100%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+
+.Content {
+    position: relative;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(210, 20, 104, 0.45), rgba(210, 20, 104, 0.45));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 24px 48px;
+    gap: 48px;
+    box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(2.5px);
+            backdrop-filter: blur(2.5px);
+    overflow: auto;
+}
+
+
+.DetailContainer {
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+
+.DetailContainer > .Header {
+        color: var(--neutral-900);
+        font-family: 'Teko';
+        font-style: normal;
+        font-weight: 700;
+        font-size: var(--fontsize-5);
+        line-height: 130%;
+        text-align: center;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+
+.DetailContainer > .AuxContainer {
+        display: flex;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+    }
+
+
+.TitleAndDescription {
+    width: 50%;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.CardDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #1D1E22;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.65);
+    border-radius: 10px 10px 16px 16px;
+    width: 50%;
+    padding: 0 0 16px;
+}
+
+
+.CardDetail > .ImageShadow {
+        width: 100%;
+    }
+
+
+.CardDetail > .ImageShadow > img {
+            height: 100%;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px 10px 0px 0px; 
+            
+        }
+
+
+.TitleDetail {
+    font-family: 'Teko';
+    font-weight: 700;
+    font-size: var(--fontsize-5);
+    line-height: 130%;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+
+color: var(--secondary-400);
+
+text-shadow: 2px 2px 4px #000000;
+}
+
+
+.description {
+    display: flex;
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--fontsize-2);
+    line-height: 130%;
+    text-align: right;
+    color: var(--secondary-200);
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+
+}
+
+
+.Released {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--fontsize-2);
+    line-height: 175%;
+    display: flex;
+    align-items: center;
+    color: #C7B9B8;
+    text-shadow: 3px 3px 2px #000000;
 }
 
 
@@ -300,19 +676,6 @@
 .SelectIcon{
     width: var(--fontsize-3);
     height: var(--fontsize-3);
-}
-
-
-.Select{
-    display: flex;
-    text-align: left;
-    font-family: 'Ubuntu';
-    color: var(--text-PinkButton);
-    text-shadow: var(--textshadow-PinkButton);
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 175%;
-    background-color: var(--background-PinkButton);
 }
 
 
@@ -378,19 +741,22 @@ optgroup > option {
   --textshadow-GenresButton: 1.25px 1.25px 2.5px rgba(235, 45, 129, 0.5);
   --textshadow-AddButton: 5px 5px 2px rgba(0, 0, 0, 0.4);
 
-
+  --boxshadow-InputButtons: 1.5px 0px 16px 1px rgba(210, 20, 104, 0.35);
   --boxshadow-PinkButton: 4px 5px 5px rgba(0, 0, 0, 0.4);
   --boxshadow-GenresButton: 0px 0px 15px 3px rgba(210, 20, 104, 0.35);
   --boxshadow-Card: 5px 5px 5px 2px rgba(0, 0, 0, 0.65);
  
   --secondary-000: rgba(253, 232, 241, 1);
+  --secondary-100: rgba(248, 185, 213, 1);
   --secondary-200: rgba(244, 139, 185, 1);
+  --secondary-300: rgba(240, 92, 157, 1);
   --secondary-400: rgba(235, 45, 129, 1);
   --secondary-500: rgba(210, 20, 104, 1);
   --secondary-700: rgba(23, 2, 12, 1);
   --secondary-800: rgba(70, 7, 35, 1);
   --secondary-900: rgba(23, 2, 12, 1);
 
+  --neutral-900: rgba(14, 11, 11, 1);
 
   --fontsize-1: 1rem;
   --fontsize-2: 1.25rem;
@@ -455,6 +821,7 @@ body {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 175%;
+  cursor: pointer;
 }
 
 

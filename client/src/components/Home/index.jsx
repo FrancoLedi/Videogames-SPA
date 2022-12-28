@@ -66,7 +66,3 @@ import '../../index.css';
 };
 
 export default Home;
-/*
-
-        <p>{JSON.stringify(videogames)}</p>
-*/
