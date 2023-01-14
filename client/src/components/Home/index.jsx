@@ -46,21 +46,31 @@ import '../../index.css';
                 <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
                 <SearchBar></SearchBar>
             </div>
-            <div class='CardContainer'>
-            {currentVideogames.length > 0 ? (currentVideogames.map((game) => {
+            
+                <div class='Home'>
+            
+                    <div class='CardContainer'>
+                    {currentVideogames.length > 0 ? (currentVideogames.map((game) => {
+                        
+                        return ( 
+                            <VideogameCard
+                            key={game.id}
+                            id={game.id}
+                            name={game.name}
+                            img={game.img}
+                            genres={game.genres.map( g => g )} 
+                            rating={game.rating}
+                            /> )
+                    })) : <h1>No hay juegos</h1>}
+
+                    <div class='Paginado'>
+                        <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
+                    </div>
+
+                </div>
+
+                </div>
                 
-                return ( 
-                    <VideogameCard
-                    key={game.id}
-                    id={game.id}
-                    name={game.name}
-                    img={game.img}
-                    genres={game.genres.map( g => g )} 
-                    rating={game.rating}
-                    /> )
-            })) : <h1>No hay juegos</h1>}
-            </div>
-            <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
         </>
     );
 };
