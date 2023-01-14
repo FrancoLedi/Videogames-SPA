@@ -17,13 +17,14 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+import server from './src/app';
+import {sequelize} from './src/db';
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+sequelize.sync({ force: true, logging: false }).then(() => {
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log('Servidor listo en puerto 3001');
   });
 });
+
 /// LA APIKEY ES: 1c6ddbc153fc443390a83b7b048d6498
