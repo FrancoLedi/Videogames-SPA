@@ -1,28 +1,46 @@
+import { Action } from './Types';
+import { StoreState, Games, ActionTypes } from './Types';
 
-import { GET_ALL_VIDEOGAMES, GET_GAME, GET_GENRES, CREATE_VIDEOGAME, FILTER, SORT, DETAIL } from './Actions';
 
-const initialState = {
+   const initialState: StoreState = {
     videogames: [],
     allVideogames: [],
     genres: [],
-    game: {},
+    game: {
+        id: 0,
+        name: '',
+        img: '',
+        genres: [],
+        rating: 0,
+        platforms: [],
+        released: '',
+        description: '',
+    },
 };
 
-function rootReducer(state = initialState, action){
+
+
+function rootReducer(state = initialState, action: Action):StoreState{
     switch (action.type) {
-        case GET_ALL_VIDEOGAMES:
+
+        case ActionTypes.GET_ALL_VIDEOGAMES:
+
             return { ...state, videogames: action.payload, allVideogames: action.payload};
 
-        case GET_GAME:
+        case ActionTypes.GET_GAME:
+
             return { ...state, videogames: action.payload};
 
-        case GET_GENRES:
+        case ActionTypes.GET_GENRES:
+
             return { ...state, genres: action.payload};
 
-        case CREATE_VIDEOGAME:
+        case ActionTypes.CREATE_VIDEOGAME:
+
             return { ...state};
 
-        case FILTER:
+        case ActionTypes.FILTER:
+
             const allVideogames = state.allVideogames;
 
             if (action.payload === 'db' || action.payload === 'api'){
@@ -38,9 +56,9 @@ function rootReducer(state = initialState, action){
             
             return { ...state, videogames: filtered };
 
-        case SORT:
-            console.log(action.payload);
-            var sortedVideogames = [];  
+        case ActionTypes.SORT:
+
+            var sortedVideogames: Games[] = [];  
             
             switch (action.payload) {
                
@@ -117,7 +135,7 @@ function rootReducer(state = initialState, action){
 
             }
 
-        case DETAIL:
+        case ActionTypes.DETAIL:
             
             return {
                 ...state, game: action.payload
