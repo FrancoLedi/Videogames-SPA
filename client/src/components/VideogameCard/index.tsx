@@ -1,10 +1,10 @@
-import React from 'react';
 import '../../index.css';
 import starIcon from '../../img/StarIcon.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GameDetail, Games } from '../../Types';
 
-export default function VideogameCard(props){
+export default function VideogameCard(props: Games){
     const [ isHover, setIsHover ] = useState(false);
     
     return (

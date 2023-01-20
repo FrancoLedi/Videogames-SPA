@@ -31,6 +31,17 @@ export interface GameDetail {
     released: string;
     description: string;
     createdInDb?: boolean;
+    // Agrego una propiedad Genres (G mayuscula)
+    // que diferencia generos traidos desde DB
+    Genres?:  Genre[];
+    // La siguiente propiedad es para reutilizar la
+    // interface en el componente VideoGameDetail...
+      match?: {
+        params: {
+          idVideogame: string | number;
+        } 
+      }
+    
 }
 
 // Declarando las acciones

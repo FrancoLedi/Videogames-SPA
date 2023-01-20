@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { getGame } from '../../redux/Actions';
 import Lupa from '../../img/Lupa.png';
@@ -7,12 +7,12 @@ export default function SearchBar() {
     let dispatch = useDispatch();
   const [name, setName] = useState("");
   
-  function handleInputChange(e) {
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     setName(e.target.value);
   }
   
-  function HandleSubmit(e) {
+  function HandleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
     dispatch(getGame(name));
     setName("")

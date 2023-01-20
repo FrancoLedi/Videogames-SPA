@@ -12,6 +12,7 @@ export const sequelize = new Sequelize({
  username: DB_USER,
  storage: ':memory:',
  models: [__dirname + '/models'],
+ logging: false
 })
 
 // En sequelize.models están todos los modelos importados como propiedades

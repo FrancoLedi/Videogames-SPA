@@ -1,62 +1,63 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../../redux/Actions";
 import { Link } from "react-router-dom";
 import Home from '../../img/Home.png';
 import starIcon from '../../img/StarIcon.png';
+import { GameDetail, StoreState } from '../../Types';
 import '../../index.css';
 
-export function VideogameDetail(props){
+export function VideogameDetail(props: GameDetail){
 
     
 
     let dispatch = useDispatch()
 
     useEffect( () => {
-        dispatch(getDetail(props.match.params.idVideogame))
+        dispatch(getDetail(props.match!.params.idVideogame))
     }, [])
 
-    let detail = useSelector(state => state.game)
+    let detail = useSelector((state: StoreState) => state.game)
     
     
 
     return(
-        <div class='VideogameDetail'>
+        <div className='VideogameDetail'>
 
-            <div class='BackgroundDetail'>
+            <div className='BackgroundDetail'>
                 <img width='250px' height='250px' src = {detail.img? detail.img: <h3>No image</h3>} />
             </div>
 
-            <div class='Content'>
+            <div className='Content'>
 
-                <div class='HomeContainer'>
-                    <Link class='HomeButton' to= '/home'><img className="HomeIcon" src={Home} /></Link>
+                <div className='HomeContainer'>
+                    <Link className='HomeButton' to= '/home'><img className="HomeIcon" src={Home} /></Link>
                 </div>
                 {
                         detail.id ? 
-                    <div class='DetailContainer'>
+                    <div className='DetailContainer'>
 
-                        <div class='Header'>
+                        <div className='Header'>
                             Game Details
                         </div>
 
-                        <div class='AuxContainer'>
+                        <div className='AuxContainer'>
 
-                            <div class='TitleAndDescription'>
-                                <h1 class='TitleDetail'>{detail.name}</h1>
-                                <span class='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ')}</span>
+                            <div className='TitleAndDescription'>
+                                <h1 className='TitleDetail'>{detail.name}</h1>
+                                <span className='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ')}</span>
                             </div>
 
-                            <div class='CardDetail'>
-                                <div class='ImageShadow'>
+                            <div className='CardDetail'>
+                                <div className='ImageShadow'>
                                     <img width='250px' height='250px' src = {detail.img? detail.img: <h3>No image</h3>} />
                                 </div>
                                 
-                                <span class='Released'>Released date: {detail.released}</span>
+                                <span className='Released'>Released date: {detail.released}</span>
 
                                 <div className='Rating'><img className='stars' src={starIcon} alt = 'not found'></img>{detail.rating}</div>
 
-                                <div class='GenresContainer'>{detail.genres ? detail.genres.map( g => <div class='Genre'>{g}</div> ) : detail.Genres.map( g => <div class='Genre'>{g.name}</div> )}</div>
+                                <div className='GenresContainer'>{detail.genres ? detail.genres.map( g => <div className='Genre'>{g}</div> ) : detail.Genres!.map( g => <div className='Genre'>{g.name}</div> )}</div>
                                 
                                 {/*<span>{typeof detail.id === 'string' ? detail.platforms: detail.platforms.map( p => p + (' '))}</span>*/}
                                 

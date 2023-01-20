@@ -8,11 +8,12 @@ import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
 import AddIcon from '../../img/Add.png';
 import '../../index.css';
+import { StoreState } from '../../Types';
 
- const Home = (props) => {
+ const Home = () => {
 
     let dispatch = useDispatch();
-    const videogames = useSelector( (state) => state.videogames);
+    const videogames = useSelector( (state: StoreState) => state.videogames);
 
     const  [refresh, setRefresh] = useState('');
     const  [currentPage, setCurrentPage] = useState(1);
@@ -21,11 +22,11 @@ import '../../index.css';
     const  indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
     const  currentVideogames = videogames.slice(indexOfFirstVideogame,indexOfLastVideogame);
     
-    const refreshComponent = (msg) => {
+    const refreshComponent = (msg: string) => {
         setRefresh(msg)
     }
 
-    const paginado = (pageNumber) => {
+    const paginado = (pageNumber: number) => {
         setCurrentPage(pageNumber)
     }
 
@@ -38,17 +39,17 @@ import '../../index.css';
 
     return (
         <>
-            <div class='navbar'>
-                <div class='CreateGame'>
-                    <Link class='Addlink' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
+            <div className='navbar'>
+                <div className='CreateGame'>
+                    <Link className='Addlink' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
                 </div>
                 <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
                 <SearchBar></SearchBar>
             </div>
             
-                <div class='Home'>
+                <div className='Home'>
             
-                    <div class='CardContainer'>
+                    <div className='CardContainer'>
                     {currentVideogames.length > 0 ? (currentVideogames.map((game) => {
                         
                         return ( 
@@ -62,7 +63,7 @@ import '../../index.css';
                             /> )
                     })) : <h1>No hay juegos</h1>}
 
-                    <div class='Paginado'>
+                    <div className='Paginado'>
                         <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
                     </div>
 

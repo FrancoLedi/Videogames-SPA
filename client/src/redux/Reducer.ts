@@ -36,7 +36,7 @@ function rootReducer(state = initialState, action: Action):StoreState{
             return { ...state, genres: action.payload};
 
         case ActionTypes.CREATE_VIDEOGAME:
-
+                
             return { ...state};
 
         case ActionTypes.FILTER:
