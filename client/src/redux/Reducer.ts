@@ -1,5 +1,5 @@
-import { Action } from './Types';
-import { StoreState, Games, ActionTypes } from './Types';
+import { Action } from '../Types';
+import { StoreState, Games, ActionTypes } from '../Types';
 
 
    const initialState: StoreState = {

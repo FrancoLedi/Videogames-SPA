@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from 'redux';
-import { ActionTypes, Games, GameDetail, Genre } from './Types';
+import { ActionTypes, Games, GameDetail, Genre } from '../Types';
 
 export function getAllVideogames(){
 
