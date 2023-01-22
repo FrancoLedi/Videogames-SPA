@@ -7,7 +7,7 @@ import { VideogameDetail } from './components/VideogameDetail';
 
 function App() {
   return (
-    <div class='App'>
+    <div className='App'>
     <Route exact path = '/videogame/:idVideogame' component={VideogameDetail}/>
     <Route exact path = '/videogames/create' component={CreateVideogame}/>
     <Route exact path='/home' component={Home}/>

@@ -1,6 +1,10 @@
-import React from "react";
+interface Props {
+    videogames: number;
+    videogamesPerPage: number;
+    paginado: Function;
+}
 
-export default function Paginado({videogames, videogamesPerPage, paginado}){
+export default function Paginado({videogames, videogamesPerPage, paginado}: Props){
     const pageNumbers = [];
     
 
