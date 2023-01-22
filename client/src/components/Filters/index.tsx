@@ -1,33 +1,34 @@
-import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { filterVideogamesBy, sortVideogamesBy } from "../../redux/Actions";
 import '../../index.css';
-import Select from 'react-select';
+import Select, { CSSObjectWithLabel } from 'react-select';
 import Bug from '../../img/Bug.png';
 import Alphabetic from '../../img/A-Z.png';
 import PinkStar from '../../img/PinkStar.png';
+import { PropsFilter, SelectOption, StoreState } from '../../Types';
 
 
-function Filters({paginado, refreshComponent}) {
+
+const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshComponent}) => {
     
-    const dispatch = useDispatch();
-    const genres = useSelector( (state) => state.genres );
-    
-    const handleFilterBy = (e) =>{
-        dispatch(filterVideogamesBy(e.value))
-    }
-
-    function handleSortBy (e) {
+  const dispatch = useDispatch();
+  const genres = useSelector( (state: StoreState) => state.genres );
   
-        dispatch(sortVideogamesBy(e.value));
+  const handleFilterBy = (option: SelectOption) =>{
+      dispatch(filterVideogamesBy(option.value))
+  }
+
+    function handleSortBy (option: SelectOption) {
+        
+        dispatch(sortVideogamesBy(option.value));
         
         paginado(1);
-        refreshComponent(`Actualizado ${e.value}`)
+        refreshComponent(`Actualizado ${option.value}`)
     }
 
     const selectStyles = {
         
-            control: (baseStyles, state) => ({
+            control: (baseStyles: CSSObjectWithLabel, state: unknown) => ({
               ...baseStyles,
               backgroundColor: 'transparent',
               borderColor: 'transparent',
@@ -38,8 +39,8 @@ function Filters({paginado, refreshComponent}) {
               ':focus': {borderColor: 'rgba(210, 20, 104, 0)' },
               
             }),
-            singleValue: (styles, { data }) => ({ ...styles, color: 'white' }),
-            option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+            singleValue: (styles: CSSObjectWithLabel) => ({ ...styles, color: 'white' }),
+            option: (styles: CSSObjectWithLabel) => {
                 
                 return {
                   ...styles,
@@ -47,7 +48,6 @@ function Filters({paginado, refreshComponent}) {
                   color: 'rgba(235, 45, 129, 1)',
                   cursor: 'pointer',
                   ':active': {
-                    ...styles[':active'],
                     backgroundColor: 'rgba(235, 45, 129, 1)',
                     color: 'rgba(253, 232, 241, 1)',
                   },
@@ -55,11 +55,11 @@ function Filters({paginado, refreshComponent}) {
                   color: 'rgba(253, 232, 241, 1)',}
                 };
               },
-              menu: baseStyles => ({
+              menu: (baseStyles: CSSObjectWithLabel) => ({
                 ...baseStyles,
                 backgroundColor: 'rgba(235, 45, 129, 1)',
             }),
-              menuList: baseStyles => ({
+              menuList: (baseStyles: CSSObjectWithLabel) => ({
                 ...baseStyles,
                 padding: 0
             }),
@@ -94,7 +94,7 @@ function Filters({paginado, refreshComponent}) {
                 {value: 'asc', label: 'Descendente'},]}
             defaultValue={[{label: 'Rating order'}]} 
             styles={selectStyles}
-            onChange={handleSortBy}
+            onChange={(value) => handleSortBy(value)}
             />
 
         </div>

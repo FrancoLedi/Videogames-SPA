@@ -92,3 +92,14 @@ export interface DETAIL {
 
 // Definiendo el type de la action del reducer
 export type Action = GET_ALL_VIDEOGAMES | GET_GAME | GET_GENRES | CREATE_VIDEOGAME | FILTER | SORT | DETAIL;
+
+// Type necesario para que funcione el Select en Filters.jsx
+export interface SelectOption {
+  value: string;
+  label: string
+}
+
+export interface PropsFilter {
+  paginado: Function;
+  refreshComponent: Function;
+}
