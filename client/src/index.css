@@ -1,3 +1,15 @@
+.Paginado {
+    display: flex;
+    grid-column: 2;
+    background: linear-gradient(0deg, rgba(70, 7, 35, 0.15), rgba(70, 7, 35, 0.15)), rgba(14, 11, 11, 0.5);
+    padding: 8px 24px;
+    border: 1px solid #EB2D81;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px 3px rgba(240, 92, 157, 0.35), inset 0px 0px 5px 3px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+}
+
 .navbar{
     background: #1D1E22;
     border-bottom: 1px solid rgba(170, 125, 145, 0.5);
@@ -7,8 +19,8 @@
     justify-content: space-around;
     align-items: center;
     padding: 0.64rem;
+    position: relative;
 }
-
 
 .CardContainer{
     display: grid;
@@ -26,7 +38,6 @@
     height: 100%;
 }
 
-
 .Addlink{
     display: flex;
     gap: .5rem;
@@ -34,7 +45,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .CreateGame{
     display: flex;
@@ -48,7 +58,6 @@
     box-shadow: var(--boxshadow-PinkButton);
 }
 
-
 .span{
     font-family: Teko;
     font-size: var(--fontsize-2);
@@ -60,7 +69,6 @@
     color: var(--secondary-400);
 }
 
-
 .AddIcon{
     background-color: var(--secondary-900);
     border-radius: 20px;
@@ -68,17 +76,9 @@
     height: var(--fontsize-5);
 }
 
-
 .AddIcon:hover{
         background-color: var(--secondary-200);
     }
-
-
-.Paginado {
-    display: flex;
-    background: red;
-}
-
 
 .Home {
     display: flex;
@@ -87,7 +87,6 @@
     align-items: center;
     height: 90%;
 }
-
 
 /*.CardContainer{
     display: grid;
@@ -102,14 +101,12 @@
     justify-self: center;
 }*/
 
-
 .BackgroundImage{
     background: radial-gradient(114.73% 166.93% at 66.26% 109.02%, #482264 43.11%, rgba(115, 18, 243, 0.4) 72.92%, rgba(41, 21, 55, 0.3) 91.67%, rgba(1, 0, 2, 0.5) 100%),url('./img/AddGame.jpg') no-repeat center center / cover;
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.35) inset;
     width: 100%;
     height: 100%;
 }
-
 
 .BackgroundBlur{
     display: flex;
@@ -123,7 +120,6 @@
             backdrop-filter: blur(5px);
     background: rgba(10, 7, 7, 0.05);
 }
-
 
 .Form{
     display: flex;
@@ -141,11 +137,9 @@
     
     }
 
-
 .Form > .aux {
         height: 100%;
     }
-
 
 .Form > .aux > .InputContainer{
             display: flex;
@@ -162,12 +156,10 @@
             margin: 8px auto;
         }
 
-
 .HomeContainer {
         display: flex;
         width: 100%;
     }
-
 
 .HomeContainer > .HomeButton{
             display: flex;
@@ -186,18 +178,15 @@
             box-shadow: var(--boxshadow-PinkButton);
         }
 
-
 .HomeContainer > .HomeButton > .HomeIcon{
                 width: var(--fontsize-3);
                 height: var(--fontsize-3);
             }
 
-
 .HomeContainer > .HomeButton:hover{
             background: var(--secondary-400);
             box-shadow: 0px 0px 10px 1px #EB2D81;
         }
-
 
 .InputContainer > input, .InputContainer > textarea {
     background-color: var(--secondary-800);
@@ -212,7 +201,6 @@
     color: var(--secondary-300);
 }
 
-
 .AddTitle {
     font-family: 'Teko';
     font-style: normal;
@@ -223,14 +211,12 @@
     text-shadow: var(--textshadow-PinkButton);
 }
 
-
 .PlatformsGenres {
     display: flex;
     gap: var(--fontsize-1);
     flex-direction: column;
     margin: 8px auto;
 }
-
 
 .PlatformsGenres > label {
         font-family: 'Ubuntu';
@@ -240,7 +226,6 @@
         line-height: 175%;
         color: var(--secondary-300);
     }
-
 
 .CheckboxContainer{
     display: flex;
@@ -252,7 +237,6 @@
     width: 80%;
     margin: 0 auto;
 }
-
 
 .Checkbox{
     padding: 0 8px;
@@ -273,18 +257,15 @@
    
 }
 
-
 .AddButton {
     margin: auto var(--fontsize-2) var(--fontsize-2) auto;
     gap: 8px;
 }
 
-
 .aux2 {
     display: flex;
     justify-content: end;
 }
-
 
 .ActiveCheckbox {
     padding: 0 8px;
@@ -305,6 +286,87 @@
     
 }
 
+.ContainerPaginado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 24px;
+}
+
+.Numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.PageButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid rgba(235, 45, 129, 0.5);
+    filter: drop-shadow(0px 0px 10px var(--secondary-400));
+    border-radius: 3px;
+    padding: 6px 12px;
+    
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.SingleNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px var(--secondary-400));
+    border-radius: 3px;
+    padding: 6px 12px;
+
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.ActiveNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: var(--secondary-400);
+    border: 1px solid rgba(235, 45, 129, 0.5);
+    box-shadow: 0px 0px 10px var(--secondary-400);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    border-radius: 3px;
+
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+}
 
 .SearchContainer{
     display: flex;
@@ -312,7 +374,6 @@
     justify-content: flex-end;
     align-items: center;
 }
-
 
 .SearchContainer > .input{
         background: rgba(132, 62, 93, 0.4);
@@ -335,26 +396,22 @@
         
     }
 
-
 .SearchContainer > .PinkButton{
         
         width: 5rem;
         height: 3.7rem;
     }
 
-
 .SearchContainer > .PinkButton .Lupa{
            width: 2.200rem;
            height: 2rem;
        }
-
 
 .Card{
    width: 100%;
 
     
 }
-
 
 .Card h3{
         display: inline-flex;
@@ -371,7 +428,6 @@
         justify-content: center;
     }
 
-
 .GenresContainer{
     display: flex;
     flex-direction: row;
@@ -381,7 +437,6 @@
     width: 100%;
     flex-wrap: wrap;
 }
-
 
 .GenresContainer .Genre{
         display: flex;
@@ -406,7 +461,6 @@
         text-shadow: var(--textshadow-GenresButton);
     }
 
-
 .Img-Genre{
 
     display: flex;
@@ -416,7 +470,6 @@
     width: 100%;
     
 }
-
 
 .Img-Genre .CardImage {
         
@@ -428,19 +481,16 @@
         height: 13rem;
     }
 
-
 .Img-Genre > .CardLink {
         width: 100%;
         position: relative;
     }
-
 
 @media (min-width: 1441px) {
     .Img-Genre  .CardImage{
         height: 19rem;
     }
 }
-
 
 .Blur {
     display: flex;
@@ -466,7 +516,6 @@
     border-radius: 10px;
 }
 
-
 .Rating {
     display: flex;
     flex-direction: row;
@@ -480,19 +529,16 @@
     font-weight: 700;
 }
 
-
 .Rating > .stars{
         width: 1.05rem;
         height: 1.2rem;
     }
-
 
 .VideogameDetail{
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgb(64 8 33 / 45%), rgb(210 20 104 / 45%));
 }
-
 
 .BackgroundDetail{
     display: flex;
@@ -509,12 +555,10 @@
     
 }
 
-
 .BackgroundDetail > img {
         width: 100%;
         height: 100%;
     }
-
 
 .BackgroundDetail::after{
         content: '';
@@ -525,7 +569,6 @@
         top: 0;
         left: 0;
     }
-
 
 .Content {
     position: relative;
@@ -545,14 +588,12 @@
     overflow: auto;
 }
 
-
 .DetailContainer {
     height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
-
 
 .DetailContainer > .Header {
         color: var(--neutral-900);
@@ -565,7 +606,6 @@
         filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
     }
 
-
 .DetailContainer > .AuxContainer {
         display: flex;
         flex-direction: row;
@@ -575,14 +615,12 @@
         gap: 48px;
     }
 
-
 .TitleAndDescription {
     width: 50%;
     gap: 18px;
     display: flex;
     flex-direction: column;
 }
-
 
 .CardDetail {
     display: flex;
@@ -598,11 +636,9 @@
     padding: 0 0 16px;
 }
 
-
 .CardDetail > .ImageShadow {
         width: 100%;
     }
-
 
 .CardDetail > .ImageShadow > img {
             height: 100%;
@@ -611,7 +647,6 @@
             border-radius: 10px 10px 0px 0px; 
             
         }
-
 
 .TitleDetail {
     font-family: 'Teko';
@@ -627,7 +662,6 @@ color: var(--secondary-400);
 text-shadow: 2px 2px 4px #000000;
 }
 
-
 .description {
     display: flex;
     font-family: 'Teko';
@@ -642,7 +676,6 @@ text-shadow: 2px 2px 4px #000000;
 
 }
 
-
 .Released {
     font-family: 'Ubuntu';
     font-style: normal;
@@ -655,7 +688,6 @@ text-shadow: 2px 2px 4px #000000;
     text-shadow: 3px 3px 2px #000000;
 }
 
-
 .FiltersContainer{
     display: flex;
     flex-direction: row;
@@ -664,7 +696,6 @@ text-shadow: 2px 2px 4px #000000;
     grid-gap: 0.6rem;
     margin: 0 0.368rem;
 }
-
 
 .FilterButtons{  
     display: flex;
@@ -683,66 +714,59 @@ text-shadow: 2px 2px 4px #000000;
     padding-left: 1.75px;
   }
 
-
 .FilterButtons:hover {
         background-color: var(--secondary-400);
       }
-
 
 .SelectIcon{
     width: var(--fontsize-3);
     height: var(--fontsize-3);
 }
 
-
 optgroup > option {
     display: flex;
     background: #1D1E22;
     text-align: left;
     font-size: var(--fontsize-1);
+    
     }
-
 
 .Bug{
     width: var(--fontsize-1);
     height: var(--fontsize-1);
 }
 
-
 /* Select classes */
-
 
 .css-1fdsijx-ValueContainer{
  padding-left: 1.75px !important;
 }
 
-
 .css-1u9des2-indicatorSeparator {
     width: 0 !important;
 }
-
 
 .css-1xc3v61-indicatorContainer {
     padding: 0 !important;
 }
 
+/* .react-select__menu-list {
+    z-index: -1;
+} */
 
 *::-webkit-scrollbar {
   width: 0.250rem;
   height: 0.250rem;
 }
 
-
 *::-webkit-scrollbar-track{
   background: rgba(255,255,255,0.1);
 }
-
 
 *::-webkit-scrollbar-thumb {
   background-color: rgba(255,255,255,0.4);
   border-radius: 20px;
 }
-
 
 :root{
   --background-cover-black: rgba(30, 30, 30, 0.81);
@@ -782,7 +806,6 @@ optgroup > option {
   --fontsize-6: 3.052rem;
 }
 
-
 *{
   padding: 0;
   margin: 0;
@@ -797,12 +820,10 @@ optgroup > option {
   scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
 }
 
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 .App{
   background-color: rgba(0, 0, 0, 0.60);
@@ -811,14 +832,12 @@ body {
   overflow-y: hidden;
 }
 
-
 #root{
   width: 100vw;
   height: 100vh;
   background: url('./img/Background-Image.jpg') no-repeat center center / cover;
   mix-blend-mode: overlay;
 }
-
 
 .PinkButton{
   display: flex;
@@ -839,7 +858,6 @@ body {
   line-height: 175%;
   cursor: pointer;
 }
-
 
 .PinkButton:hover {
     background-color: var(--secondary-400);

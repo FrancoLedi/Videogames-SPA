@@ -64,7 +64,7 @@ import { StoreState } from '../../Types';
                     })) : <h1>No hay juegos</h1>}
 
                     <div className='Paginado'>
-                        <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} />
+                        <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} page={currentPage} />
                     </div>
 
                 </div>
