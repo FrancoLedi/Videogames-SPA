@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../../redux/Actions";
+import { getDetail, cleanGame } from "../../redux/Actions";
 import { Link } from "react-router-dom";
 import Home from '../../img/Home.png';
 import starIcon from '../../img/StarIcon.png';
@@ -15,6 +15,9 @@ export function VideogameDetail(props: GameDetail){
 
     useEffect( () => {
         dispatch(getDetail(props.match!.params.idVideogame))
+        return () => {
+            dispatch(cleanGame())
+        }
     }, [])
 
     let detail = useSelector((state: StoreState) => state.game)
@@ -45,7 +48,7 @@ export function VideogameDetail(props: GameDetail){
 
                             <div className='TitleAndDescription'>
                                 <h1 className='TitleDetail'>{detail.name}</h1>
-                                <span className='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ')}</span>
+                                <span className='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ').replace(/&#39;s/g, '')}</span>
                             </div>
 
                             <div className='CardDetail'>
@@ -65,7 +68,7 @@ export function VideogameDetail(props: GameDetail){
 
                         </div>
 
-                    </div>: <h1>Loading...</h1>
+                    </div>: <div className='Loading'></div>
                 }
             </div>
 

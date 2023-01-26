@@ -174,6 +174,7 @@ const CreateVideogame = () => {
                                     max = "5" 
                                     value = {input.rating} 
                                     name = 'rating'
+                                    step=".01"
                                     onChange={(e) => handleChange(e)}
                                 />
                                 </div>

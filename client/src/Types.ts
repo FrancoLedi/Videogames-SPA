@@ -52,7 +52,8 @@ export enum ActionTypes {
     GET_GENRES = 'GET_GENRES',
     FILTER = 'FILTER',
     SORT = 'SORT',
-    DETAIL = 'DETAIL'
+    DETAIL = 'DETAIL',
+    CLEAN = 'CLEAN'
   }
 
 // Tipando actions que le llegan al reducer
@@ -90,8 +91,12 @@ export interface DETAIL {
     payload: GameDetail;
   }
 
+export interface CLEAN {
+    type: ActionTypes.CLEAN;
+  }
+
 // Definiendo el type de la action del reducer
-export type Action = GET_ALL_VIDEOGAMES | GET_GAME | GET_GENRES | CREATE_VIDEOGAME | FILTER | SORT | DETAIL;
+export type Action = GET_ALL_VIDEOGAMES | GET_GAME | GET_GENRES | CREATE_VIDEOGAME | FILTER | SORT | DETAIL | CLEAN;
 
 // Type necesario para que funcione el Select en Filters.jsx
 export interface SelectOption {

@@ -61,13 +61,15 @@ import { StoreState } from '../../Types';
                             genres={game.genres.map( g => g )} 
                             rating={game.rating}
                             /> )
-                    })) : <h1>No hay juegos</h1>}
+                    })) : <div className='Loading'></div>}
 
-                    <div className='Paginado'>
-                        <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} page={currentPage} />
-                    </div>
-
+                <div className='Paginado'>
+                    <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} page={currentPage} />
                 </div>
+                
+                </div>
+
+                
 
                 </div>
                 

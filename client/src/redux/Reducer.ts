@@ -140,6 +140,20 @@ function rootReducer(state = initialState, action: Action):StoreState{
             return {
                 ...state, game: action.payload
             }
+
+        case ActionTypes.CLEAN:
+
+            return{
+                ...state, game: {
+                    id: 0,
+                    name: '',
+                    img: '',
+                    genres: [],
+                    rating: 0,
+                    platforms: [],
+                    released: '',
+                    description: ''}
+            }
             
         default:
             return state;

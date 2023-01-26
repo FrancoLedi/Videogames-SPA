@@ -2,6 +2,15 @@ import axios from "axios";
 import { Dispatch } from 'redux';
 import { ActionTypes, Games, GameDetail, Genre } from '../Types';
 
+export function cleanGame(){
+
+    return async function(dispatch: Dispatch) {
+        return dispatch({
+            type: ActionTypes.CLEAN
+        })
+    }
+}
+
 export function getAllVideogames(){
 
     return async function(dispatch: Dispatch) {

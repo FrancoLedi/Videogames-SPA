@@ -8,6 +8,7 @@
     box-shadow: 0px 0px 20px 3px rgba(240, 92, 157, 0.35), inset 0px 0px 5px 3px rgba(0, 0, 0, 0.35);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
+    grid-row: 6;
 }
 
 .navbar{
@@ -36,6 +37,7 @@
     justify-self: center;
     padding: 1.5rem 3rem;
     height: 100%;
+    width: 100vw;
 }
 
 .Addlink{
@@ -82,10 +84,44 @@
 
 .Home {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 90%;
+}
+
+.Loading {
+    display: inline-block;
+    padding: 40px;
+    border-radius: 50%;
+    animation: rotate 0.7s linear infinite;
+    background: linear-gradient(90deg, black 0%, rgba(235, 45, 129) 53%);
+    height: 40px;
+    width: 40px;
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0 auto;
+}
+
+.Loading::after {
+        content: " ";
+        background: black;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg)
+    }
 }
 
 /*.CardContainer{
@@ -324,6 +360,10 @@
     cursor: pointer;
 }
 
+.PageButtons:hover {
+        background: var(--secondary-400);
+    }
+
 .SingleNumber {
     display: flex;
     justify-content: center;
@@ -487,7 +527,7 @@
     }
 
 @media (min-width: 1441px) {
-    .Img-Genre  .CardImage{
+    .Img-Genre  .CardImage .Blur{
         height: 19rem;
     }
 }
