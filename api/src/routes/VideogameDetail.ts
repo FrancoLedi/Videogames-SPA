@@ -1,5 +1,6 @@
 
-const { Router } = require('express');
+import {Router} from 'express';
+import { DBDATA } from './Types';
 
 const { getDbInfo, getDetail } = require('./AuxFunctions')
 
@@ -11,8 +12,8 @@ router.get('/:idVideogame', async (req, res) => {
     
     const { idVideogame } = req.params;
     const detailApi = await getDetail(idVideogame);
-    const dataDB = await getDbInfo();
-    const detailDB = await dataDB.find( el =>  el.id == idVideogame);
+    const dataDB: DBDATA[] = await getDbInfo(); 
+    const detailDB = await dataDB.find( (el) =>  el.id == idVideogame);
     
 
         if (detailApi) return res.send(detailApi);

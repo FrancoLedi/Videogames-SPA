@@ -1,16 +1,18 @@
 require('dotenv').config();
+import { Api , RootObject, GamesRootObject, Results } from './Types';
+
 const { API_KEY } = process.env;
-const axios = require('axios');
+import axios from 'axios';
 const { Videogame, Genre } = require('../db');
 
-const getDetail = async (id) => {
+const getDetail = async (id: number): Promise<Api | false> => {
     
 try {
     
-    const respuesta = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
+    const respuesta = await axios.get<RootObject>(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
 
     
-    const apiInfo = {
+    const apiInfo: Api = {
         id: respuesta.data.id,
         name: respuesta.data.name,
         img: respuesta.data.background_image,
@@ -30,8 +32,8 @@ try {
 } 
 
 const getApiInfo = async () => {
-    const respuesta = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
-    const apiInfo = await respuesta.data.results.map( el => {
+    const respuesta = await axios.get<GamesRootObject>(`https://api.rawg.io/api/games?key=${API_KEY}`)
+    const apiInfo: Api[] = await respuesta.data.results.map( (el): Api => {
         
         return {
             id: el.id,
@@ -39,7 +41,7 @@ const getApiInfo = async () => {
             img: el.background_image,
             released: el.released,
             rating: el.rating,
-            platforms: el.platforms.map(el => el.platform.name), 
+            platforms: el.platforms.map(el => el.name), // Esta línea la cambiamos y estaba así --> ....map(el => el.platform.name)
             genres: el.genres.map(el => el.name)
         }
     })
@@ -48,7 +50,7 @@ const getApiInfo = async () => {
 
 const getDbInfo = async () => {
    
-    const result = await Videogame.findAll({
+    const result: Results[] = await Videogame.findAll({
         include: {
             model: Genre,
             attributes: ['name'],
@@ -57,16 +59,18 @@ const getDbInfo = async () => {
             },
         }
      })
+     
      return result.map(el => el.dataValues)
 }
 
 const getAllInfo = async () => {
     const apiInfo = await getApiInfo();
     const dbInfo = await getDbInfo();
-    const aux = await dbInfo.reduce((acc, el) => acc.concat({
+    const aux: Api[] = await dbInfo.reduce((acc: any, el) => acc.concat({
         ...el,
-        genres: el.Genres.map(g => g.name)
+        genres: el.Genres.map((g: any) => g.name)
     }), []); // Creo una variable auxiliar para mapear y que me de solo la info que me es de utilidad
+    
     const allInfo = apiInfo.concat(aux); 
 
     return allInfo;

@@ -2,18 +2,19 @@
 // videojuegos
 require('dotenv').config();
 const { Router } = require('express');
+import { Request, Response } from 'express';
 const { v4: UUIDV4 } = require('uuid');
 const { Videogame, Genre } = require('../db');
-
+import { Api } from "./Types";
 
 const { getAllInfo } = require('./AuxFunctions')
 
 const router = Router();
 
 
- router.get('/', async (req, res) => {
+ router.get('/', async (req: Request, res: Response) => {
        const { name } = req.query;
-       const data = await getAllInfo()
+       const data: Api[] = await getAllInfo()
       
        const result = data.map(el => {
         
@@ -29,7 +30,7 @@ const router = Router();
 
        if (name){ // ACA NOS FALTARIA HACER UN .SPLICE Y CORTAR EN 15 LOS RESULTADOS
         
-         const resultByName = result.filter( el =>  el.name.toLowerCase().includes(name.toLowerCase()));
+         const resultByName = result.filter( el =>  el.name.toLowerCase().includes(el.name.toLowerCase()));
         
          if (resultByName.length){
             
@@ -46,7 +47,7 @@ const router = Router();
   
 
 
-router.post('/', async (req, res) => {
+router.post('/', async (req: Request, res: Response) => {
     let { name, description, released, rating, platforms, createdInDb, genres } = req.body;
     if (!name || !description || !platforms) return res.send('Faltan datos obligatorios');
     platforms = platforms.join(', ')

@@ -1,7 +1,7 @@
 import express, {Application, Request, Response, NextFunction} from 'express';
 import cookieParser = require('cookie-parser');
 import morgan = require('morgan');
-const routes = require('./routes/index.js');
+const routes = require('./routes/index');
 import cors = require('cors');
 
 const server: Application = express();
