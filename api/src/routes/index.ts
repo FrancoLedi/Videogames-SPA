@@ -1,8 +1,8 @@
 import {Router} from 'express';
 
 // Importo los routers:
-const VideogamesR = require('./Videogames.js');
-const GenresR = require('./Genres.js');
+const VideogamesR = require('./Videogames');
+const GenresR = require('./Genres');
 const VideogameDetailR = require('./VideogameDetail')
 
 const router = Router();

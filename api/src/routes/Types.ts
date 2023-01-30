@@ -16,6 +16,41 @@ export interface Genres {
     name: string;
 }
 
+// Genres.ts
+
+export interface Respuesta {
+  id: number;
+  name: string;
+  slug: string;
+  games_count: number;
+  image_background: string;
+  games: any;
+}
+// Auto-generated Type for Genres Api response
+
+export interface GenresRootObject {
+  count: number;
+  next?: any;
+  previous?: any;
+  results: GenresResult[];
+}
+
+export interface GenresResult {
+  id: number;
+  name: string;
+  slug: string;
+  games_count: number;
+  image_background: string;
+  games: GenresGame[];
+}
+
+export interface GenresGame {
+  id: number;
+  slug: string;
+  name: string;
+  added: number;
+}
+
 // DBDATA (VideogameDetails required interface)
 
 export interface DBDATA {
