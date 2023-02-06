@@ -32,7 +32,7 @@ try {
 } 
 
 const getApiInfo = async () => {
-    const respuesta = await axios.get<GamesRootObject>(`https://api.rawg.io/api/games?key=${API_KEY}`)
+    const respuesta = await axios.get<GamesRootObject>(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=39`)
     const apiInfo: Api[] = await respuesta.data.results.map( (el): Api => {
         
         return {

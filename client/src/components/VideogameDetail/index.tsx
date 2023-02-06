@@ -48,7 +48,7 @@ export function VideogameDetail(props: GameDetail){
 
                             <div className='TitleAndDescription'>
                                 <h1 className='TitleDetail'>{detail.name}</h1>
-                                <span className='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ').replace(/&#39;s/g, '')}</span>
+                                <span className='description'>{detail.description.replace(/<\/?[^>]+(>|$)/g, ' ').replace(/&#39;/g, '').replace(/&quot;/g, ' ')}</span>
                             </div>
 
                             <div className='CardDetail'>

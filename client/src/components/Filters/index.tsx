@@ -80,7 +80,7 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
             <Select options={options()}
             defaultValue={[{label: 'Genres'}]} 
             styles={selectStyles}
-            onChange={handleFilterBy}
+            onChange={(value) => handleFilterBy(value)}
             
             />
 

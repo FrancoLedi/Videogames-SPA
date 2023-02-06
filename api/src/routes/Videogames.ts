@@ -13,7 +13,7 @@ const router = Router();
 
 
  router.get('/', async (req: Request, res: Response) => {
-       const { name } = req.query;
+       const name = req.query.name as string;
        const data: Api[] = await getAllInfo()
       
        const result = data.map(el => {
@@ -29,8 +29,8 @@ const router = Router();
      })
 
        if (name){ // ACA NOS FALTARIA HACER UN .SPLICE Y CORTAR EN 15 LOS RESULTADOS
-        
-         const resultByName = result.filter( el =>  el.name.toLowerCase().includes(el.name.toLowerCase()));
+        console.log(name)
+         const resultByName = result.filter( el =>  el.name.toLowerCase().includes(name.toLowerCase()));
         
          if (resultByName.length){
             
@@ -48,9 +48,10 @@ const router = Router();
 
 
 router.post('/', async (req: Request, res: Response) => {
-    let { name, description, released, rating, platforms, createdInDb, genres } = req.body;
+    let { name, description, released, rating, platforms, createdInDb, img, genres } = req.body;
     if (!name || !description || !platforms) return res.send('Faltan datos obligatorios');
     platforms = platforms.join(', ')
+    if (!img) img = 'https://img5.goodfon.com/original/1366x768/1/6e/minimalizm-fon-crash-maska-art-crash-bandicoot-bandicoot-thi.jpg'; // Imagen por defecto
   try {
    const newVideogame = await Videogame.create({
     id: UUIDV4(),
@@ -59,7 +60,8 @@ router.post('/', async (req: Request, res: Response) => {
     released, 
     rating, 
     platforms, // CHEQUEAR MAS ADELANTE SI ESTA BIEN QUE ME PASEN EL DATO EN UN STRING SEPARADO POR COMAS
-    createdInDb
+    createdInDb,
+    img
    })
 
    const genreDb = await Genre.findAll({

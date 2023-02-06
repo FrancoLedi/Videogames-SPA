@@ -28,7 +28,7 @@ export function getGame(name: string){
         try {
             
             var games = await axios.get<Games[] | Games>('http://localhost:3001/videogames?name=' + name)
-            
+            console.log(games.data)
            return dispatch({
                type: ActionTypes.GET_GAME, 
                payload: games.data

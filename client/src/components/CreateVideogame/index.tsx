@@ -6,6 +6,7 @@ import Home from '../../img/Home.png';
 import Gameboy from '../../img/Gameboy.png';
 import '../../index.css'
 import { GameDetail, StoreState } from "../../Types";
+import Axios from 'axios';
 
 const CreateVideogame = () => {
     useEffect( () => {
@@ -25,6 +26,7 @@ const CreateVideogame = () => {
         genres: []
     })
 
+    const[loading, setLoading] = useState(false);
 
     function handleChange(e: React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>) {
         setInput({
@@ -106,6 +108,27 @@ const CreateVideogame = () => {
         alert("Juego creado")
     }
     
+     const uploadImage = (files: FileList ) => {
+         const formData = new FormData()
+        
+          formData.append("file", files[0])
+          formData.append("upload_preset","VideogamesCloud")
+          setLoading(true)
+      
+          Axios.post("https://api.cloudinary.com/v1_1/eledeledi/image/upload", formData).then(response => {
+            console.log(response.data.secure_url);
+          setInput({
+           ...input,
+           img: response.data.secure_url
+          })
+        })
+        
+          setLoading(false)
+     
+     
+      }
+
+
     return (
         <div className='BackgroundImage'>
             <div className='BackgroundBlur'>
@@ -142,14 +165,14 @@ const CreateVideogame = () => {
                                     
                                 />
                             </div>
-
+                     
                             <div className='InputContainer'>
                                 <label>Image</label>
                                 <input
-                                    type = 'text'
-                                    value = {input.img}
-                                    name = 'img'
-                                    onChange={(e) => handleChange(e)}
+                                    
+                                    id="jpg"
+                                    type="file"
+                                    onChange={(e)=>{uploadImage(e.target.files!)}}
                                 />
                             </div>
 
