@@ -7,6 +7,8 @@ import Paginado from '../Paginado';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router-dom';
 import AddIcon from '../../img/Add.png';
+import NavIcon from '../../img/NavIcon.png';
+import CloseButton from '../../img/CloseButton.png';
 import '../../index.css';
 import { StoreState } from '../../Types';
 
@@ -35,10 +37,45 @@ import { StoreState } from '../../Types';
         dispatch(getAllVideogames());
     }, []);
 
-    
+    const screenWidth = window.matchMedia('(max-width: 930px)');
+
+    const [open, setOpen] = useState(false);
 
     return (
         <>
+        { screenWidth.matches? 
+        // |Versión Móvil
+
+         <>
+            { open?
+
+            // - Nav Menu Open
+            
+            <div className='NavMenu'>
+                <div onClick={() => setOpen(false)} className='CloseButton'>
+                    <img className='CloseIcon' src={CloseButton} />
+                </div>
+                
+                <div className='MenuContainer'>
+                    <SearchBar/>
+                    <Filters paginado={paginado} refreshComponent={refreshComponent}/>
+                    <div className='CreateGame'>
+                        <Link className='Addlink' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
+                    </div>
+                </div>
+            </div>
+            : 
+            // - Nav menu Closed
+
+            <div onClick={() => setOpen(true)} className='NavButton'>
+                <img className='NavIcon' src={NavIcon} />
+            </div> 
+                }
+         </> 
+        :
+        // |Versión Escritorio
+
+         <>
             <div className='navbar'>
                 <div className='CreateGame'>
                     <Link className='Addlink' to= '/videogames/create'><span className='span'>¡Add new<br></br>game!</span><img className='AddIcon' src={AddIcon} /></Link>
@@ -46,7 +83,9 @@ import { StoreState } from '../../Types';
                 <Filters paginado={paginado} refreshComponent={refreshComponent}></Filters>
                 <SearchBar></SearchBar>
             </div>
-            
+         </> }
+
+
                 <div className='Home'>
             
                     <div className='CardContainer'>
@@ -63,9 +102,9 @@ import { StoreState } from '../../Types';
                             /> )
                     })) : <div className='Loading'></div>}
 
-                <div className='Paginado'>
+                    <div className='Paginado'>
                     <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} page={currentPage} />
-                </div>
+                    </div>
                 
                 </div>
 

@@ -1,13 +1,108 @@
+.NavMenu {
+    position: absolute;
+    background: #1D1E22;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset -2px 0px 15px 2px rgba(0, 0, 0, 0.65);
+    border-radius: 0px 40px 40px 0px;
+    height: fit-content;
+    z-index: 21;
+    padding: 32px;
+    top: 50%;
+    margin-top: -264px;
+    
+    & > .MenuContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 56px 16px 16px 40px;
+        & > .FiltersContainer {
+            flex-direction: column;
+            width: 75%;
+            gap: 24px;
+            & > .FilterButtons {
+                width: 100%;
+            }
+        }
+        & > .CreateGame {
+            width: 75%;
+            padding: 0.5rem;
+            & > .Addlink {
+                gap: 1.25rem;
+                & > .span {
+                    font-size: var(--fontsize-3);
+                }  
+            }
+        }
+  }
+}
+
+@media (max-width: 500px) {
+    .NavMenu {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        border-radius: 0px;
+        & > .MenuContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 24px 8px 8px 16px;
+            margin-top: 16px;
+        }
+    }
+}
+
+.CloseButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-900);
+    border-radius: 8px;
+    border: 1.7px solid rgba(248, 185, 213, 0.3);
+    padding: 8px;
+    box-shadow: var(--boxshadow-PinkButton);
+    width: fit-content;
+    position: absolute;
+}
+
+.CloseIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.NavButton {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background: #1D1E22;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 10px 5px rgba(17, 14, 16, 0.5);
+    border-radius: 10px;
+    padding: 8px;
+    z-index: 20;
+}
+
+.NavIcon {
+    width: 25px;
+    height: 25px;
+}
+
 .Paginado {
     display: flex;
-    grid-column: 2;
     background: linear-gradient(0deg, rgba(70, 7, 35, 0.15), rgba(70, 7, 35, 0.15)), rgba(14, 11, 11, 0.5);
     padding: 8px 24px;
     border: 1px solid #EB2D81;
     border-radius: 50px;
     box-shadow: 0px 0px 20px 3px rgba(240, 92, 157, 0.35), inset 0px 0px 5px 3px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(10px);
-    grid-row: 6;
+    position: absolute;
+    bottom: 10%;
+    margin-bottom: -52px;
+    left: 50%;
+    margin-left: -146px;
 }
 
 .navbar{
@@ -38,6 +133,25 @@
     padding: 1.5rem 3rem;
     height: 100%;
     width: 100vw;
+}
+
+@media (max-width: 1000px) {
+    .CardContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 630px) {
+    .CardContainer {
+        display: flex;
+        grid-row-gap: 5.5rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 1.5rem 3rem;
+        height: 100%;
+        width: 100vw;
+        flex-direction: column;
+    }
 }
 
 .Addlink{
@@ -90,6 +204,16 @@
     height: 90%;
 }
 
+@media (max-width: 930px) {
+    .Home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
 .Loading {
     display: inline-block;
     padding: 40px;
@@ -122,16 +246,3 @@
         transform: rotate(360deg)
     }
 }
-
-/*.CardContainer{
-    display: grid;
-    height: 90%; 
-    padding: 3rem;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 5.5rem;
-    grid-column-gap: 3rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    justify-self: center;
-}*/
