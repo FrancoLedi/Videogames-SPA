@@ -1,3 +1,18 @@
+.Networks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+       grid-column: 3;
+       grid-row: 6;
+}
+
+.NetworkIcons {
+    width: 40px;
+    height: 40px
+}
+
 .NavMenu {
     position: absolute;
     background: #1D1E22;
@@ -139,6 +154,11 @@
     .CardContainer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .Networks {
+        grid-column: 2/2;
+        grid-row: 9;
+        justify-content: end;
+    }
 }
 
 @media (max-width: 630px) {
@@ -151,6 +171,12 @@
         height: 100%;
         width: 100vw;
         flex-direction: column;
+    }
+    .Networks {
+        grid-column: 1;
+        grid-row: 9;
+        justify-content: center;
+        padding-bottom: 40px;
     }
 }
 

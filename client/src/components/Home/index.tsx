@@ -11,6 +11,9 @@ import NavIcon from '../../img/NavIcon.png';
 import CloseButton from '../../img/CloseButton.png';
 import '../../index.css';
 import { StoreState } from '../../Types';
+import Linkedin from '../../img/Linkedin.png';
+import Github from '../../img/Github.png';
+import Portfolio from '../../img/Portfolio.png';
 
  const Home = () => {
 
@@ -105,6 +108,12 @@ import { StoreState } from '../../Types';
 
                     <div className='Paginado'>
                     <Paginado videogamesPerPage={videogamesPerPage} videogames={videogames.length} paginado={paginado} page={currentPage} />
+                    </div>
+
+                    <div className='Networks'>
+                        <a className='Linkedin' href = 'https://www.linkedin.com/in/francoledesma'><img className='LinkedinIcon NetworkIcons' src={Linkedin} /></a>
+                        <a className='Github' href= 'https://github.com/FrancoLedi'><img className='GithubIcon NetworkIcons' src={Github} /></a>
+                        <a className='Portfolio' href= 'https://francoledesma.vercel.app/'><img className='PortfolioIcon NetworkIcons' src={Portfolio} /></a>
                     </div>
                 
                 </div>
