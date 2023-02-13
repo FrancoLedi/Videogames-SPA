@@ -289,7 +289,7 @@
     width: 66%;
     margin: var(--fontsize-4); 
     
-    }
+ }
 
 .Form > .aux {
         height: 100%;
@@ -309,6 +309,14 @@
             width: 85%;
             margin: 8px auto;
         }
+
+@media only screen and (min-width: 300px) and (max-width: 425px) {
+    .Form{
+        width: 90%;
+        
+    }
+        
+ }
 
 .HomeContainer {
         display: flex;
@@ -910,6 +918,116 @@ text-shadow: 2px 2px 4px #000000;
     align-items: center;
     color: #C7B9B8;
     text-shadow: 3px 3px 2px #000000;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .DetailContainer > .AuxContainer {
+        flex-direction: column-reverse;
+    }
+
+    .TitleAndDescription {
+        width: 100%;
+    }
+
+    .TitleDetail {
+        font-size: var(--fontsize-3);
+        justify-content: center;
+    }
+
+    .description {
+        font-size: var(--font-size-1);
+        text-align: justify;
+    }
+
+    .CardDetail {
+        width: 100%;
+    }
+
+    .Released {
+        font-size: var(--fontsize-1);
+    }
+    
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .DetailContainer > .AuxContainer {
+        flex-direction: column-reverse;
+    }
+
+    .TitleAndDescription {
+        width: 100%;
+    }
+
+    .TitleDetail {
+        font-size: var(--fontsize-5);
+        justify-content: center;
+    }
+
+    .description {
+        font-size: var(--fontsize-3);
+        text-align: justify;
+    }
+
+    .CardDetail {
+        width: 75%;
+    }
+
+    .Released {
+        font-size: var(--fontsize-1);
+    }
+    
+    
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1800px) {
+
+    .TitleAndDescription {
+        width: 100%;
+    }
+
+    .TitleDetail {
+        font-size: var(--fontsize-5);
+    }
+
+    .description {
+        font-size: var(--fontsize-3);
+    }
+
+    .CardDetail {
+        width: 60%;
+    }
+
+    .Released {
+        font-size: var(--fontsize-3);
+    }
+    
+    
+}
+
+@media only screen and (min-width: 1800px) and (max-width: 2560px) {
+
+    .TitleAndDescription {
+        width: 100%;
+    }
+
+    .TitleDetail {
+        font-size: var(--fontsize-6);
+    }
+
+    .description {
+        font-size: var(--fontsize-4);
+    }
+
+    .CardDetail {
+        width: 75%;
+    }
+
+    .Released {
+        font-size: var(--fontsize-3);
+    }
+    
+    
 }
 
 .FiltersContainer{

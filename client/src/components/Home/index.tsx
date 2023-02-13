@@ -37,6 +37,7 @@ import { StoreState } from '../../Types';
         dispatch(getAllVideogames());
     }, []);
 
+
     const screenWidth = window.matchMedia('(max-width: 930px)');
 
     const [open, setOpen] = useState(false);

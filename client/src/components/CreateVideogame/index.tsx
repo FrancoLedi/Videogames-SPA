@@ -105,6 +105,16 @@ const CreateVideogame = () => {
         }
         
         dispatch(createVideogame(input))
+        setInput({
+            name: "", 
+            img: "",
+            description: "", 
+            released: "", 
+            rating: 0, 
+            platforms: [], 
+            createdInDb: true, 
+            genres: []
+        })
         alert("Juego creado")
     }
     
