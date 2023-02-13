@@ -5,7 +5,7 @@ export interface Api {
     description?: string;
     released: string;
     rating: number;
-    platforms: string[];
+    platforms: string[] | string;
     genres?: string[];
     Genres?: Genres[];
     createdInDb?: boolean;

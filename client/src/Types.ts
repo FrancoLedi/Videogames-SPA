@@ -6,6 +6,30 @@ export interface StoreState {
     game: GameDetail;
    }
 
+// CreateGameState
+export interface CreateGameState {
+  id?: number;
+  name: string;
+  img: string;
+  genres: string[];
+  rating: number;
+  platforms: string[];
+  released: string;
+  description: string;
+  createdInDb?: boolean;
+  // Agrego una propiedad Genres (G mayuscula)
+  // que diferencia generos traidos desde DB
+  Genres?:  Genre[];
+  // La siguiente propiedad es para reutilizar la
+  // interface en el componente VideoGameDetail...
+    match?: {
+      params: {
+        idVideogame: string | number;
+      } 
+    }
+  
+}
+
 // Tipando las propiedades del estado
 export interface Genre {
     id: number;
@@ -27,7 +51,7 @@ export interface GameDetail {
     img: string;
     genres: string[];
     rating: number;
-    platforms: string[];
+    platforms: string[] | string;
     released: string;
     description: string;
     createdInDb?: boolean;

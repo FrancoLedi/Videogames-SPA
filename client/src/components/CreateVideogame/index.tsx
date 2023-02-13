@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Home from '../../img/Home.png';
 import Gameboy from '../../img/Gameboy.png';
 import '../../index.css'
-import { GameDetail, StoreState } from "../../Types";
+import { CreateGameState, GameDetail, StoreState } from "../../Types";
 import Axios from 'axios';
 
 const CreateVideogame = () => {
@@ -15,7 +15,7 @@ const CreateVideogame = () => {
     const dispatch = useDispatch()
     const genres = useSelector( (state: StoreState) => state.genres )
 
-    const [input, setInput] = useState<GameDetail>({
+    const [input, setInput] = useState<CreateGameState>({
         name: "", 
         img: "",
         description: "", 

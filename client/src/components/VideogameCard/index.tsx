@@ -30,7 +30,3 @@ export default function VideogameCard(props: Games){
         </div>
     )
 }
-
-/*<Link className='CardLink' key={props.id} to= {'/videogame/' + props.id}>
-                        <img className='CardImage' src={props.img} alt = 'not found'></img>
-                    </Link> */

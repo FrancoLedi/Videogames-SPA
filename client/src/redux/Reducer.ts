@@ -136,6 +136,15 @@ function rootReducer(state = initialState, action: Action):StoreState{
             }
 
         case ActionTypes.DETAIL:
+
+            if (typeof action.payload.id === 'string') {
+                let platforms = action.payload.platforms as string;;
+                let platformsConvertidaEnArray = platforms.split(', ');
+                action.payload.platforms = platformsConvertidaEnArray;
+                return {
+                    ...state, game: action.payload
+                }
+            }
             
             return {
                 ...state, game: action.payload

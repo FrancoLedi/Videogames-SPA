@@ -90,7 +90,7 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
 
             <img className="SelectIcon" src={PinkStar} />
             <Select options={[
-                {value: 'desc', label: 'Ascendente'},    /* Cambie a propósito los values de esto xq me daban al revez y tenia poco tiempo para arreglarlo*/ 
+                {value: 'desc', label: 'Ascendente'},  
                 {value: 'asc', label: 'Descendente'},]}
             defaultValue={[{label: 'Rating order'}]} 
             styles={selectStyles}

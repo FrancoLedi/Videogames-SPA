@@ -41,7 +41,7 @@ const getApiInfo = async () => {
             img: el.background_image,
             released: el.released,
             rating: el.rating,
-            platforms: el.platforms.map(el => el.name), // Esta línea la cambiamos y estaba así --> ....map(el => el.platform.name)
+            platforms: el.platforms.map(el => el.name), 
             genres: el.genres.map(el => el.name)
         }
     })

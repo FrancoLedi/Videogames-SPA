@@ -26,5 +26,3 @@ sequelize.sync({ force: true, logging: false }).then(() => {
     console.log('Servidor listo en puerto 3001');
   });
 });
-
-/// LA APIKEY ES: 1c6ddbc153fc443390a83b7b048d6498

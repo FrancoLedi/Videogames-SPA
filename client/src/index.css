@@ -792,6 +792,23 @@
         height: 1.2rem;
     }
 
+.Box{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.Subtitle {
+font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--fontsize-3);
+    line-height: 175%;
+    text-align: center;
+    color: var(--secondary-500);
+    text-shadow: var(--textshadow-PinkButton);
+}
+
 .VideogameDetail{
     width: 100%;
     height: 100%;
@@ -1116,10 +1133,6 @@ optgroup > option {
 .css-1xc3v61-indicatorContainer {
     padding: 0 !important;
 }
-
-/* .react-select__menu-list {
-    z-index: -1;
-} */
 
 *::-webkit-scrollbar {
   width: 0.250rem;
