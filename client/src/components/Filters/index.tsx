@@ -14,8 +14,8 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
   const dispatch = useDispatch();
   const genres = useSelector( (state: StoreState) => state.genres );
   
-  const handleFilterBy = (option: SelectOption) =>{
-      dispatch(filterVideogamesBy(option.value))
+  const handleFilterBy = (option: string) =>{
+      dispatch(filterVideogamesBy(option))
   }
 
     function handleSortBy (option: SelectOption) {
@@ -80,7 +80,7 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
             <Select options={options()}
             defaultValue={[{label: 'Genres'}]} 
             styles={selectStyles}
-            onChange={(value) => handleFilterBy(value!)}
+            onChange={(value) => handleFilterBy(value.label!)}
             
             />
 
