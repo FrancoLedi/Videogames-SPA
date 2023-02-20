@@ -67,7 +67,7 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
     }
 
     let options = () => (genres && genres.map(g => (
-        {value: `${g.name}`, label: `${g.name}`}
+        {label: `${g.name}`}
         )))
 
     return (
