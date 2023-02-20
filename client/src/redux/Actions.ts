@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Dispatch } from 'redux';
 import { ActionTypes, Games, GameDetail, Genre } from '../Types';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 export function cleanGame(){
 
@@ -14,7 +15,7 @@ export function cleanGame(){
 export function getAllVideogames(){
 
     return async function(dispatch: Dispatch) {
-       var json = await axios.get<Games[]>('http://localhost:3001/videogames')
+       var json = await axios.get<Games[]>('/videogames')
            return dispatch({
                type: ActionTypes.GET_ALL_VIDEOGAMES, 
                payload: json.data
@@ -27,7 +28,7 @@ export function getGame(name: string){
     return async function(dispatch: Dispatch) {
         try {
             
-            var games = await axios.get<Games[] | Games>('http://localhost:3001/videogames?name=' + name)
+            var games = await axios.get<Games[] | Games>('/videogames?name=' + name)
             console.log(games.data)
            return dispatch({
                type: ActionTypes.GET_GAME, 
@@ -42,7 +43,7 @@ export function getGame(name: string){
 
 export function getGenres() {
     return async function(dispatch: Dispatch) {
-      var genres = await axios.get<Genre[]>('http://localhost:3001/genres')
+      var genres = await axios.get<Genre[]>('/genres')
       return dispatch({
         type: ActionTypes.GET_GENRES, 
         payload: genres.data
@@ -52,7 +53,7 @@ export function getGenres() {
 
 export function createVideogame(payload: GameDetail){
     return async function(dispatch: Dispatch) {
-        var videogame = await axios.post('http://localhost:3001/videogames', payload)
+        var videogame = await axios.post('/videogames', payload)
         
         return videogame
       }
@@ -72,7 +73,7 @@ export function sortVideogamesBy(payload: string) {
 
 export function getDetail(id: string | number) {
     return async function (dispatch: Dispatch){
-        var detail = await axios.get<GameDetail>('http://localhost:3001/videogame/' + id);
+        var detail = await axios.get<GameDetail>('/videogame/' + id);
         return dispatch({
             type: ActionTypes.DETAIL,
             payload: detail.data
