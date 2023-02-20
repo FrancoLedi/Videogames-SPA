@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --openssl-legacy-provider",
+    "build": "react-scripts --openssl-legacy-provider build",
     "postcss-start": "postcss --watch src/index.pcss -o src/index.css",
     "eject": "react-scripts eject"
   },
