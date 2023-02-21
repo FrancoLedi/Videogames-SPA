@@ -30,7 +30,7 @@ export function VideogameDetail(props: GameDetail){
         <div className='VideogameDetail'>
 
             <div className='BackgroundDetail'>
-                <img width='250px' height='250px' src = {detail.img? detail.img: <h3>No image</h3>} />
+                <img width='250px' height='250px' src = {detail.img? detail.img: 'No image'} />
             </div>
 
             <div className='Content'>
