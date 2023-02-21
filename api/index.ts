@@ -17,7 +17,7 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import process from 'process';
+
 import server from './src/app';
 import {sequelize} from './src/db';
 require('dotenv').config();
