@@ -9,7 +9,7 @@ const config = {
     dbHost: process.env.DB_HOST || 'localhost',
     dbName: process.env.DB_NAME || 'videogames',
     dbPort: process.env.DB_PORT || '5432',
-    port: process.env.API_PORT || '3001',
+    port: process.env.PORT || '3001',
     host: process.env.API_host || 'localhost',
     cors: process.env.CORS || 'localhost:3000',
    };
