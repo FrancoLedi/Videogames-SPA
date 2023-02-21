@@ -5,6 +5,10 @@ const {
   DB_USER, DB_PASSWORD, DB_NAME
 } = process.env;
 
+console.log(DB_USER)
+console.log(DB_PASSWORD)
+console.log(DB_NAME)
+
 export const sequelize = new Sequelize({
  dialect: 'postgres',
  database: DB_NAME,
