@@ -2,11 +2,6 @@ require('dotenv').config();
 import {Sequelize} from 'sequelize-typescript';
 
 import config from './lib/config';
-/*
-    | Solución a DB_PORT siendo tipado como string |
-    Hay que revisar en el workshop donde aprendimos 
-    Typescript que muestra como tipar el .env
- */
 
 export const sequelize = new Sequelize({
  dialect: 'postgres',

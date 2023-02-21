@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Dispatch } from 'redux';
 import { ActionTypes, Games, GameDetail, Genre } from '../Types';
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://videogamess.up.railway.app/';
 
 export function cleanGame(){
 
