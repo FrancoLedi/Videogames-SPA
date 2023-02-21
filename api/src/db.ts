@@ -2,12 +2,12 @@ require('dotenv').config();
 import {Sequelize} from 'sequelize-typescript';
 
 const {
-  DB_USER, DB_PASSWORD
+  DB_USER, DB_PASSWORD, DB_NAME
 } = process.env;
 
 export const sequelize = new Sequelize({
  dialect: 'postgres',
- database: 'videogames',
+ database: DB_NAME,
  password: DB_PASSWORD,
  username: DB_USER,
  storage: ':memory:',

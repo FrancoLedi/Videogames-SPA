@@ -17,12 +17,16 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import process from 'process';
 import server from './src/app';
 import {sequelize} from './src/db';
-
+require('dotenv').config();
+const {
+  PORT
+} = process.env;
 // Syncing all the models at once.
 sequelize.sync({ force: true, logging: false }).then(() => {
-  server.listen(3001, () => {
-    console.log('Servidor listo en puerto 3001');
+  server.listen(PORT, () => {
+    console.log('Servidor listo en ' + PORT);
   });
 });
