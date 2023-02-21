@@ -55,7 +55,7 @@ export function VideogameDetail(props: GameDetail){
 
                             <div className='CardDetail'>
                                 <div className='ImageShadow'>
-                                    <img width='250px' height='250px' src = {detail.img? detail.img: <h3>No image</h3>} />
+                                    <img width='250px' height='250px' src = {detail.img? detail.img: 'No image'} />
                                 </div>
                                 
                                 <span className='Released'>Released date: {detail.released}</span>
