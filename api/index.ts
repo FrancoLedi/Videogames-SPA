@@ -21,12 +21,10 @@
 import server from './src/app';
 import {sequelize} from './src/db';
 require('dotenv').config();
-const {
-  PORT
-} = process.env;
+import config from './src/lib/config';
 // Syncing all the models at once.
 sequelize.sync({ force: true, logging: false }).then(() => {
-  server.listen(PORT, () => {
-    console.log('Servidor listo en ' + PORT);
+  server.listen(config.port, () => {
+    console.log('Servidor listo en ' + config.port);
   });
 });

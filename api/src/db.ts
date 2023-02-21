@@ -1,20 +1,20 @@
 require('dotenv').config();
 import {Sequelize} from 'sequelize-typescript';
 
-const {
-  DB_USER, DB_PASSWORD, DB_NAME, DB_HOST
-} = process.env;
-
-console.log(DB_USER)
-console.log(DB_PASSWORD)
-console.log(DB_NAME)
+import config from './lib/config';
+/*
+    | Solución a DB_PORT siendo tipado como string |
+    Hay que revisar en el workshop donde aprendimos 
+    Typescript que muestra como tipar el .env
+ */
 
 export const sequelize = new Sequelize({
  dialect: 'postgres',
- host: DB_HOST,
- database: DB_NAME,
- password: DB_PASSWORD,
- username: DB_USER,
+ host: config.dbHost,
+ port: config.dbPort,
+ database: config.dbName,
+ password: config.dbPassword,
+ username: config.dbUser,
  storage: ':memory:',
  models: [__dirname + '/models'],
  logging: false
