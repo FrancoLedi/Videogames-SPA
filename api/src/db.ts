@@ -11,7 +11,7 @@ import config from './lib/config';
 export const sequelize = new Sequelize({
  dialect: 'postgres',
  host: config.dbHost,
- port: config.dbPort,
+ port: config.dbPort as unknown as number,
  database: config.dbName,
  password: config.dbPassword,
  username: config.dbUser,
