@@ -62,7 +62,7 @@ function rootReducer(state = initialState, action: Action):StoreState{
             
             switch (action.payload) {
                
-                case 'a-z':
+                case 'A - Z':
                     
                      sortedVideogames = state.videogames.sort(function (a, b) {
                              if (a.name > b.name){
@@ -79,7 +79,7 @@ function rootReducer(state = initialState, action: Action):StoreState{
                             videogames: sortedVideogames
                         }
 
-                case 'z-a':
+                case 'Z - A':
                     
                      sortedVideogames = state.videogames.sort(function (a, b) {
                                 if (a.name > b.name){
@@ -96,7 +96,7 @@ function rootReducer(state = initialState, action: Action):StoreState{
                                 videogames: sortedVideogames
                             };
 
-                case 'asc':
+                case 'Ascendente':
                     
                      sortedVideogames = state.videogames.sort(function (a, b) {
                         if (a.rating > b.rating){
@@ -113,7 +113,7 @@ function rootReducer(state = initialState, action: Action):StoreState{
                         videogames: sortedVideogames
                     }
 
-               case 'desc':
+               case 'Descendente':
                 
                      sortedVideogames = state.videogames.sort(function (a, b) {
                         if (a.rating > b.rating){

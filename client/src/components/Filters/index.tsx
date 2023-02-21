@@ -18,12 +18,12 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
       dispatch(filterVideogamesBy(option))
   }
 
-    function handleSortBy (option: SelectOption) {
+    function handleSortBy (option: string) {
         
-        dispatch(sortVideogamesBy(option.value));
+        dispatch(sortVideogamesBy(option));
         
         paginado(1);
-        refreshComponent(`Actualizado ${option.value}`)
+        refreshComponent(`Actualizado ${option}`)
     }
 
     const selectStyles = {
@@ -90,11 +90,11 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
 
             <img className="SelectIcon" src={PinkStar} />
             <Select options={[
-                {value: 'desc', label: 'Ascendente'},  
-                {value: 'asc', label: 'Descendente'},]}
+                {label: 'Ascendente'},  
+                {label: 'Descendente'},]}
             defaultValue={[{label: 'Rating order'}]} 
             styles={selectStyles}
-            onChange={(value) => handleSortBy(value)}
+            onChange={(value) => handleSortBy(value!.label)}
             />
 
         </div>
@@ -104,11 +104,11 @@ const Filters: React.FunctionComponent<PropsFilter> = ({paginado, refreshCompone
         <img className="SelectIcon" src={Alphabetic} />
 
             <Select options={[
-                {value: 'a-z', label: 'A - Z'},         
-                {value: 'z-a', label: 'Z - A'},]}
+                {label: 'A - Z'},         
+                {label: 'Z - A'},]}
             defaultValue={[{label: 'Alphabetic order'}]} 
             styles={selectStyles}
-            onChange={handleSortBy}
+            onChange={(value) => handleSortBy(value!.label)}
             />
 
         </div>       
