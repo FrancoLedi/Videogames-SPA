@@ -10,6 +10,8 @@ const config = {
     dbName: process.env.DB_NAME || 'videogames',
     dbPort: process.env.DB_PORT || '5432',
     port: process.env.PORT || '3001',
+    host: process.env.API_host || 'localhost',
+    cors: process.env.CORS || 'localhost:3000',
    };
    
    export default config;
